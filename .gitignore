@@ -1,0 +1,8 @@
+# โค้ด Python
+__pycache__/
+main.ipynb
+
+
+# Storage
+env
+.vscode

@@ -1,8 +1,6 @@
-# โค้ด Python
-__pycache__/
-main.ipynb
-
-
-# Storage
-env
-.vscode
+*/.vscode/*
+.env
+*/__pycache__/*
+*.pyc
+.env
+*/*.ipynb

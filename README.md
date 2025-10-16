@@ -34,7 +34,7 @@ uvicorn main:app --reload
 ```
 
 ### RUN WEB
-```bash
+```bash 
 cd frontend
 npm run dev
 
@@ -42,5 +42,9 @@ cd backend
 source venv/bin/activate   # สำหรับ macOS/Linux
 venv\Scripts\activate      # สำหรับ Windows
 uvicorn main:app --reload
+
+# หรือ
+cd backend
+python -m uvicorn main:app --reload
 ```
 

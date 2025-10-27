@@ -23,11 +23,12 @@ run terminal อีกตัว
 cd backend
 
 # ติดตั้งรอบเดียว
-python -m venv venv
-pip install -r requirements.txt
+python -m venv env
 
-source venv/bin/activate   # สำหรับ macOS/Linux
-venv\Scripts\activate      # สำหรับ Windows
+source env/bin/activate   # สำหรับ macOS/Linux
+env\Scripts\activate      # สำหรับ Windows
+
+pip install -r requirements.txt
 
 #  รันเซิร์ฟเวอร์
 uvicorn main:app --reload
@@ -39,8 +40,8 @@ cd frontend
 npm run dev
 
 cd backend
-source venv/bin/activate   # สำหรับ macOS/Linux
-venv\Scripts\activate      # สำหรับ Windows
+source env/bin/activate   # สำหรับ macOS/Linux
+env\Scripts\activate      # สำหรับ Windows
 uvicorn main:app --reload
 ```
 

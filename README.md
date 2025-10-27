@@ -29,7 +29,7 @@ env\Scripts\activate      # สำหรับ Windows
 pip install -r requirements.txt
 
 #  รันเซิร์ฟเวอร์
-uvicorn main:app --reload
+uvicorn backend.main:app --reload
 ```
 
 ### RUN WEB

@@ -20,26 +20,27 @@ npm run dev
 ## 3. การติดตั้ง Backend
 run terminal อีกตัว
 ```bash
+cd backend
+
 # ติดตั้งรอบเดียว
-python -m venv env
-
-source env/bin/activate   # สำหรับ macOS/Linux
-env\Scripts\activate      # สำหรับ Windows
-
+python -m venv venv
 pip install -r requirements.txt
 
+source venv/bin/activate   # สำหรับ macOS/Linux
+venv\Scripts\activate      # สำหรับ Windows
+
 #  รันเซิร์ฟเวอร์
-uvicorn backend.main:app --reload
+uvicorn main:app --reload
 ```
 
 ### RUN WEB
-```bash 
+```bash
 cd frontend
 npm run dev
 
-source env/bin/activate   # สำหรับ macOS/Linux
-env\Scripts\activate      # สำหรับ Windows
-uvicorn backend.main:app --reload
-
+cd backend
+source venv/bin/activate   # สำหรับ macOS/Linux
+venv\Scripts\activate      # สำหรับ Windows
+uvicorn main:app --reload
 ```
 

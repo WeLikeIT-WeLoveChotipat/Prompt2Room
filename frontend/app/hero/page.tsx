@@ -1,8 +1,8 @@
 'use client'
 import Image from "next/image"
 import heroImage from "../images/hero.svg"
-import niggapong from "../images/blueniggapong49.svg"
-import blackpong from "../images/blackpong.svg"
+import blue from "../images/blue.svg"
+import orange from "../images/orange.svg"
 export default function HeroPage() {
   return (
     <div className="flex min-h-screen">
@@ -11,14 +11,14 @@ export default function HeroPage() {
           <Image
             height={2000}
             width={2000}
-            src={blackpong}
+            src={orange}
             alt="blackpong"
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-90"
           />
           <Image
             height={2000}
             width={2000}
-            src={niggapong}
+            src={blue}
             alt="blue49"
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-100 mix-blend-normal"
           />

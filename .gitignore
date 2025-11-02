@@ -1,6 +1,13 @@
-*/.vscode/*
-.env
-*/__pycache__/*
+.vscode/
+.DS_Store
+__pycache__/*
 *.pyc
+env/
+*.ipynb
+.ipynb_checkpoints/
+*.pt
+.env.*
+Assets/
+*.json
+*.ipynb
 .env
-*/*.ipynb

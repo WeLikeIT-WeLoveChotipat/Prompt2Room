@@ -1,4 +1,3 @@
-# detect.py
 import io
 import os
 from typing import List, Optional

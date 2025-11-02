@@ -1,4 +1,3 @@
-# cutout.py
 import io, base64
 from typing import List, Optional, Tuple
 from PIL import Image

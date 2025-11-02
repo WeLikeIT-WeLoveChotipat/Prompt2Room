@@ -5,6 +5,7 @@ from .filter.prompt.prompt_styple import SYSTEM_INSTRUCTION
 from .filter.models.schemas import ResponseStructor # โครงสร้างข้อมูลผลลัพธ์จาก service
 from .filter.gate_service import gate # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 from .filter.client import get_openai_api_key # ฟังก์ชันดึงค่า OpenAI API Key
+from .generate.pipeline import pipeline # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 
 app = FastAPI()
 
@@ -53,4 +54,5 @@ async def generate(request: Request):
     ใช้ทดสอบว่าระบบรับ/ส่ง JSON ได้ปกติ
     """
     request_json = await request.json()
-    return JSONResponse(request_json)
+    result = pipeline(request_json['txt'],API)
+    return JSONResponse(result)

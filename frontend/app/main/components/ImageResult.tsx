@@ -1,5 +1,3 @@
-"use client";
-
 interface ImageResultProps {
   imageUrl: string | null;
   prompt: string;

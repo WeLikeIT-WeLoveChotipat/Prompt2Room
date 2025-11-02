@@ -9,7 +9,7 @@ import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
 
-import { getMessage } from "@/utils/api";
+import { getMessage, filterMessage, generateResponse } from "@/utils/api";
 import { insertPrompt, listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
 
 export default function MainPage() {
@@ -69,9 +69,37 @@ export default function MainPage() {
     setTimeout(async () => {
       setIsGenerating(false);
       setImage(testImage);
-      console.log(`Prompt: "${prompt}"`);
-      console.log(`Image: "${testImage}"`);
-      
+      // console.log(`Prompt: "${prompt}"`);
+      // console.log(`Image: "${testImage}"`);
+      try {
+          console.time("generate");
+        const res = await filterMessage(prompt);
+        if (res.label == "INTERIOR_ROOM") {
+          console.log(`status: filtered`);
+          const genRes  = await generateResponse(res.normalized_prompt);
+          const cleaned = genRes.filter(item => !(Array.isArray(item) && item.length === 0));
+          const items = flattenTop(cleaned).filter(Boolean);
+          const firstImg: Piece | undefined = items.find(
+            (x: any) => x && typeof x === 'object' && 'b64' in x
+          );
+
+          if (firstImg) {
+            setImage(toDataUrl(firstImg));
+          for (let i = 1 ; i < items.length - 1; i++) {
+            console.log(items[i]);
+          }
+          console.timeEnd("generate");
+        }
+        else {
+          console.log(res.error.message);
+          console.log(res.error.reason);
+        }
+      }
+    }
+      catch (error) {
+        console.error(error);
+      }
+
       try {
         await insertPrompt(prompt, testImage);
         await refreshPrompts();
@@ -92,6 +120,13 @@ export default function MainPage() {
       setErr(error instanceof Error ? error.message : "ลบไม่สำเร็จ");
     }
   }
+  type Piece = { mime_type?: string; b64: string };
+
+  const toDataUrl = (p: Piece) =>
+  `data:${p.mime_type ?? 'image/png'};base64,${p.b64}`;
+
+  const flattenTop = (arr: any[]) =>
+    arr.flatMap(x => (Array.isArray(x) ? x : [x]));
 
   return (
     <main className="min-h-screen bg-white">

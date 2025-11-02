@@ -4,7 +4,7 @@ from PIL import Image
 from rembg import remove, new_session
 import onnxruntime as ort  # สำคัญสำหรับเช็ค provider
 
-from models.schemas import Detection, BoundingBox
+from .models.schemas import Detection, BoundingBox
 
 _REMBG_SESSION = None
 

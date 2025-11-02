@@ -7,7 +7,6 @@ env/
 .ipynb_checkpoints/
 *.pt
 .env.*
-Assets/
 *.json
 *.ipynb
 .env

@@ -2,6 +2,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import Image from 'next/image'
+import Blue from '../images/blue.svg'
+import Orangelogin from '../images/orangelogin.svg'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -71,7 +74,20 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden flex items-center justify-center p-4">
-
+      <Image
+        height={2000}
+        width={2000}
+        src={Blue}
+        alt=""
+        className="absolute left-[0%] bottom-[0%] w-[40%] h-auto"
+      />
+      <Image
+        height={2000}
+        width={2000}
+        src={Orangelogin}
+        alt=""
+        className="absolute right-[0%] top-[0%] w-[40%] h-auto"
+      />
       <div className="relative z-20 w-full max-w-md">
         <div className="bg-white rounded-3xl shadow-2xl p-10 space-y-8">
           <div className="text-center">

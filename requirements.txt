@@ -4,3 +4,13 @@ protobuf
 pydantic
 python-dotenv
 google-genai
+torch
+ultralytics
+pillow
+rembg
+onnxruntime
+open-clip-torch
+chromadb
+sentence_transformers
+numpy
+pandas

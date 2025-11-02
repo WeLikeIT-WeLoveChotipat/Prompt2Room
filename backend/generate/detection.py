@@ -1,11 +1,10 @@
-# detect.py
 import io
 import os
 from typing import List, Optional
-from taxonomy import normalize_label
+from .taxonomy import normalize_label
 from ultralytics import YOLO
 from PIL import Image
-from models.schemas import Detection, BoundingBox, DetectResponse
+from .models.schemas import Detection, BoundingBox, DetectResponse
 import torch
 
 DEVICE = os.getenv("DEVICE") or ("cuda:0" if torch.cuda.is_available() else "cpu")

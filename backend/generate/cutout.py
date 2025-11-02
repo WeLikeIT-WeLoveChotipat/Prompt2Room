@@ -1,11 +1,10 @@
-# cutout.py
 import io, base64
 from typing import List, Optional, Tuple
 from PIL import Image
 from rembg import remove, new_session
 import onnxruntime as ort  # สำคัญสำหรับเช็ค provider
 
-from models.schemas import Detection, BoundingBox
+from .models.schemas import Detection, BoundingBox
 
 _REMBG_SESSION = None
 

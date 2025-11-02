@@ -85,7 +85,7 @@ def img2search(path,label):
     vec = CLIP.encode(img, batch_size=16,convert_to_numpy=True,normalize_embeddings=True)
     res = col.query(query_embeddings=[vec.tolist()],n_results=1,where={"category": label},include=["uris","metadatas","distances"])
 
-    all_metas = [{**d, 'distance': dist} for metas_row, dists_row in zip(res['metadatas'], res['distances'])for d, dist in zip(metas_row, dists_row) ]
+    all_metas = [{**d, 'uris': dist} for metas_row, dists_row in zip(res['metadatas'], res['uris'])for d, dist in zip(metas_row, dists_row) ]
     return all_metas
     
 if __name__ == '__main__':

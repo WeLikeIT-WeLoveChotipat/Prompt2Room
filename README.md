@@ -45,3 +45,7 @@ env\Scripts\activate      # สำหรับ Windows
 uvicorn main:app --reload
 ```
 
+#pong
+#aumji
+#new
+#four

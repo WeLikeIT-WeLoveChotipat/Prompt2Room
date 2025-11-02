@@ -1,9 +1,26 @@
 'use client'
 import Image from "next/image"
+import heroImage from "../images/hero.svg"
+import niggapong from "../images/blueniggapong49.svg"
+import blackpong from "../images/blackpong.svg"
 export default function HeroPage() {
   return (
     <div className="flex min-h-screen">
       <div className="w-2/5 relative justify-center items-center text-center px-16 bg-white">
+        <div className="absolute bottom-0 left-0 w-full">
+          <Image
+            height={2000}
+            width={2000}
+            src={niggapong}
+            alt="blue49"
+          />
+          <Image
+            height={2000}
+            width={2000}
+            src={blackpong}
+            alt="blue49"
+          />
+        </div>
         <h1 className="text-8xl font-extrabold mt-30 z-10 drop-shadow-lg">
           <span className="text-blue-600">P</span>
           <span className="text-gray-900">2</span>
@@ -23,10 +40,12 @@ export default function HeroPage() {
       </div>
 
       <div className="w-3/5">
-        <img
-          src="/frontend/app/images/hero.svg"
+        <Image
+          height={2000}
+          width={2000}
+          src={heroImage}
           alt="Room Design"
-          className="object-cover"
+          className="object-cover w-full h-full"
         />
       </div>
     </div>

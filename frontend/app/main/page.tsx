@@ -9,9 +9,12 @@ import PromptForm from "./components/PromptForm";
 import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
+import Footer from "../ui/footer";
 
 import { getMessage } from "@/utils/api";
 import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
+import WhyChooseSection from "./components/WhyChooseSection";
+
 
 // แบบที่ backend ส่งมา เราจะเอามาใส่ใน state เดิมชื่อ products
 type ProductItem = {
@@ -212,6 +215,8 @@ export default function MainPage() {
           </div>
         </div>
       )}
+      <WhyChooseSection/>
+      <Footer/>
     </main>
   );
 }

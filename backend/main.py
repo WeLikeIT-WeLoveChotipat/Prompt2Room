@@ -76,7 +76,7 @@ async def generate(request: Request):
         original_prompt = req_json["txt"]
         user_id = req_json.get("user_id")
 
-        result = pipeline(original_prompt, API)
+        result = pipeline(req_json["txt"], API)
 
         image_url = None
         categories = []

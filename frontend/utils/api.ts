@@ -1,5 +1,5 @@
 export const API_BASE = "http://127.0.0.1:8000";
-import { fetchCache } from '../.next/server/chunks/b6e69_next_b144bc3d._';
+import { supabase } from "@/lib/supabaseClient";
 
 export async function getMessage() {
   const res = await fetch(`${API_BASE}/`, {
@@ -9,7 +9,7 @@ export async function getMessage() {
   return res.json();
 }
 
-export async function filterMessage(message:String) {
+export async function filterMessage(message: string) {
   const res = await fetch(`${API_BASE}/filter`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
@@ -18,11 +18,28 @@ export async function filterMessage(message:String) {
   return res.json();
 } 
 
-export async function generateResponse(params:String) {
-  const res  = await fetch(`${API_BASE}/generate`, {
+export async function generateResponse(prompt: string) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    throw new Error("No Login");
+  }
+
+  const res = await fetch(`${API_BASE}/generate`, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({"txt": params}),
-  })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      txt: prompt,
+      user_id: user.id
+    }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Backend error: ${res.status} ${text}`);
+  }
+
   return res.json();
 }

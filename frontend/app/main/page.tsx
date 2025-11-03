@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
@@ -13,12 +12,10 @@ import StoragePrompts from "./components/StoragePrompts";
 import { getMessage } from "@/utils/api";
 import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
 
-// แบบที่ backend ส่งมา เราจะเอามาใส่ใน state เดิมชื่อ products
 type ProductItem = {
   category?: string;
   url?: string;
   item_name?: string;
-  // ถ้ามี field อื่นจาก backend ก็ยังไม่พัง
 };
 
 const API_BASE =
@@ -35,7 +32,6 @@ export default function MainPage() {
   const [rows, setRows] = useState<PromptRow[]>([]);
   const [err, setErr] = useState<string | null>(null);
 
-  // โหลดรายการ prompt ที่เคยบันทึกใน supabase
   const refreshPrompts = useCallback(async () => {
     try {
       setErr(null);
@@ -61,7 +57,6 @@ export default function MainPage() {
     }
   }, []);
 
-  // ตอนโหลดหน้า: เช็ก API PY ยังอยู่ไหม + โหลดรายการ prompt
   useEffect(() => {
     (async () => {
       try {
@@ -74,9 +69,7 @@ export default function MainPage() {
     })();
   }, [refreshPrompts]);
 
-  // =============== ส่วนสำคัญ: ส่ง prompt ไปให้ FastAPI และอ่านผลกลับมา ===============
   const handleSubmit = async (prompt: string) => {
-    // ต้อง login ก่อน
     const {
       data: { session },
     } = await supabase.auth.getSession();
@@ -116,21 +109,18 @@ export default function MainPage() {
         throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
       }
 
-      // รูป
       if (row.image_url) {
         setImage(row.image_url as string);
       } else {
         setImage(null);
       }
 
-      // categories ใน DB ตอนนี้คือของที่รวมมาจาก pipeline แล้ว
       if (Array.isArray(row.categories)) {
         setProducts(row.categories as ProductItem[]);
       } else {
         setProducts([]);
       }
 
-      // โหลดรายการเก่ามาโชว์ด้านล่าง
       await refreshPrompts();
     } catch (e) {
       setErr(
@@ -164,7 +154,6 @@ export default function MainPage() {
       {image ? (
         <div className="flex flex-col items-center justify-center p-4">
           <div className="w-full max-w-7xl">
-            {/* ImageResult เดิมใช้ props ชื่อ products ก็ยังใช้ชื่อเดิมได้ */}
             <ImageResult
               imageUrl={image}
               prompt={selectedPrompt}

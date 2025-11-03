@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import Image from "next/image";
+import Logo from "@/app/ui/Logo";
 
 type UserProfile = {
   avatar_url: string;
@@ -51,27 +52,18 @@ export default function Header() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleSignOut = () => {
-    supabase.auth.signOut().then(() => {
-      setIsLoggedIn(false);
-      setUserProfile(null);
-    });
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    setIsLoggedIn(false);
+    setUserProfile(null);
+    router.replace("/");
   };
 
-  const handleLogin = () => {
-    router.push("/login");
-  };
 
   return (
-    <header className="text-black px-6 py-4 flex justify-between items-center">
+    <header className="text-black px-20 py-4 flex justify-between items-center">
 
-      <div className="text-center">
-        <h1 className="text-6xl font-bold tracking-tight">
-          <span className="text-blue-500">P</span>
-          <span className="text-gray-800">2</span>
-          <span className="text-orange-500">R</span>
-        </h1>
-      </div>
+      <Logo />
 
       {isLoggedIn ? (
         <button
@@ -98,21 +90,18 @@ export default function Header() {
             <span className="text-sm">{userProfile?.full_name || "User"}</span>
           </div>
 
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-lg bg-gray-700 text-white text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="pointer-events-none absolute inset-0 py-2 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md text-white bg-gradient-to-r from-blue-500 to-blue-500 hover:shadow-lg hover:from-blue-500 hover:to-blue-600 hover:scale-105 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             Logout
           </div>
         </button>
       ) : (
-        <div
-          onClick={handleLogin}
-          className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-lg bg-gray-700 text-white text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          title="Login"
+        <button
+          onClick={() => router.push("/login")}
+          className="py-2 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md text-white bg-gradient-to-r from-blue-500 to-blue-500 hover:shadow-lg hover:from-blue-500 hover:to-blue-600 hover:scale-105"
         >
-          Logout
-        </div>
+          Sign in
+        </button>
       )}
-
-
     </header>
   );
 }

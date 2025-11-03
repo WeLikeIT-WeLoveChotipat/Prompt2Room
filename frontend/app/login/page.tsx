@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabaseClient'
 import Image from 'next/image'
 import Blue from '../images/blue.svg'
 import Orangelogin from '../images/orangelogin.svg'
+import Logo from '../ui/Logo'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -73,7 +74,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden flex items-center justify-center p-4">
+    <div className="font-kanit min-h-screen bg-white relative overflow-hidden flex items-center justify-center p-4">
       <Image
         height={2000}
         width={2000}
@@ -90,16 +91,11 @@ export default function LoginPage() {
       />
       <div className="relative z-20 w-full max-w-md">
         <div className="bg-white rounded-3xl shadow-2xl p-10 space-y-8">
-          <div className="text-center">
-            <h1 className="text-6xl font-bold tracking-tight">
-              <span className="text-blue-500">P</span>
-              <span className="text-gray-800">2</span>
-              <span className="text-orange-500">R</span>
-            </h1>
-          </div>
-
-          <p className="text-center text-gray-600 text-base leading-relaxed">
-            Continue creating your perfect room with Prompt2Room.
+          <Logo />
+          <p className="text-center text-base leading-relaxed">
+            เริ่มต้นสร้างห้องในฝันของคุณได้ง่าย ๆ <br />
+            เพียงเข้าสู่ระบบด้วยบัญชี Google ของคุณ แล้วให้ Prompt2Room
+            ช่วยเปลี่ยนคำบรรยายให้กลายเป็นภาพจริงของห้องที่คุณจินตนาการไว้
           </p>
 
           <div className="relative">
@@ -131,6 +127,13 @@ export default function LoginPage() {
             <span>{isLoading ? 'กำลังนำไปยัง Google…' : 'Continue with Google'}</span>
           </button>
         </div>
+        <button
+          onClick={() => router.push('/main')}
+          className="font-kanit absolute top-[-5] right-5 text-gray-400 hover:text-red-600 hover:scale-105 text-8xl font-bold transition-all duration-200"
+          aria-label="Close"
+        >
+          ×
+        </button>
       </div>
     </div>
   )

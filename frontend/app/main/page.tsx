@@ -8,11 +8,11 @@ import PromptForm from "./components/PromptForm";
 import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
-import Footer from "../ui/footer";
+import WhyChooseSection from "./components/WhyChooseSection";
+import Footer from "@/app/ui/Footer";
 
 import { getMessage } from "@/utils/api";
 import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
-import WhyChooseSection from "./components/WhyChooseSection";
 
 
 type ProductItem = {
@@ -155,18 +155,17 @@ export default function MainPage() {
       <Header />
 
       {image ? (
-        <div className="flex flex-col items-center justify-center p-4">
+        <div className="flex flex-col items-center justify-center p-4 bg-orange-500/30">
           <div className="w-full max-w-7xl">
             <ImageResult
               imageUrl={image}
               prompt={selectedPrompt}
               products={products}
             />
-            <StoragePrompts rows={rows} onDelete={handleDelete} />
           </div>
         </div>
       ) : (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4">
+        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4 bg-orange-500/30">
           <div className="w-full max-w-4xl text-center">
             <h1 className="text-5xl md:text-6xl font-semibold text-black">
               ออกแบบห้องในฝันของคุณได้ทันที
@@ -197,15 +196,10 @@ export default function MainPage() {
         </div>
       )}
 
-      {!image && (
-        <div className="flex flex-col items-center justify-center p-4 bg-white">
-          <div className="w-full max-w-7xl">
-            <StoragePrompts rows={rows} onDelete={handleDelete} />
-          </div>
-        </div>
-      )}
-      <WhyChooseSection/>
-      <Footer/>
+      <StoragePrompts rows={rows} onDelete={handleDelete} />
+
+      <WhyChooseSection />
+      <Footer />
     </main>
   );
 }

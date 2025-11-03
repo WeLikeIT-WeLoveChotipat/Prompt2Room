@@ -5,26 +5,23 @@ interface ExamplePromptsProps {
 
 export default function ExamplePrompts({ onSelectPrompt, isGenerating }: ExamplePromptsProps) {
   const examples = [
-    "ห้องนอนสไตล์มินิมอลสีขาว พร้อมเตียงไม้สีธรรมชาติ",
-    "ห้องนั่งเล่นสไตล์โมเดิร์นสีเทา พร้อมโซฟาสีน้ำเงิน",
-    "ห้องครัวสไตล์สแกนดิเนเวียน พร้อมเกาะครัวสีขาว"
+    { label: "ห้องมินิมอล", prompt: "ห้องนอนสไตล์มินิมอลสีขาว พร้อมเตียงไม้สีธรรมชาติ" },
+    { label: "ครัวสไตล์สแกนดิเนเวียน", prompt: "ห้องครัวสไตล์สแกนดิเนเวียน พร้อมเกาะครัวสีขาว" },
+    { label: "ห้องนั่งเล่นสไตล์โมเดิร์น", prompt: "ห้องนั่งเล่นสไตล์โมเดิร์นสีเทา พร้อมโซฟาสีน้ำเงิน" },
   ];
 
   return (
-    <div className="mb-[5%]">
-      <h3 className="text-lg font-medium text-black mb-4">ตัวอย่าง Prompt:</h3>
-      <div className="grid gap-2">
-        {examples.map((example, index) => (
-          <button
-            key={index}
-            onClick={() => onSelectPrompt(example)}
-            disabled={isGenerating}
-            className="text-left p-3 bg-gray-50 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-black transition-all duration-200 border-2 border-gray-200 hover:border-gray-500"
-          >
-            {example}
-          </button>
-        ))}
-      </div>
+    <div className="flex gap-3 justify-center flex-wrap mt-6">
+      {examples.map((example, index) => (
+        <button
+          key={index}
+          onClick={() => onSelectPrompt(example.prompt)}
+          disabled={isGenerating}
+          className="bg-white text-black hover:text-blue-500 px-6 py-2 rounded-4xl hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {example.label}
+        </button>
+      ))}
     </div>
   );
 }

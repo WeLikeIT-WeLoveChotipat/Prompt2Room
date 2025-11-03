@@ -14,7 +14,7 @@ export default function PromptForm({
   onSubmit,
   isGenerating,
   selectedPrompt,
-  maxLength = 500,
+  maxLength = 1000,
 }: PromptFormProps) {
   const [prompt, setPrompt] = useState("");
 
@@ -62,54 +62,50 @@ export default function PromptForm({
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 border-2 border-gray-500 shadow-lg">
+    <div className="bg-white rounded-2xl p-8 shadow-2xl">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="prompt" className="block text-lg font-medium text-black mb-3">
-            อธิบายห้องที่คุณต้องการ:
-          </label>
-
           <textarea
             id="prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="เช่น สร้างห้องนอนสไตล์มินิมอลสีขาว พร้อมเตียงไม้สีธรรมชาติ..."
-            className={`w-full h-32 p-4 rounded-xl bg-gray-50 border ${overLimit ? "border-red-400" : "border-gray-300"
-              } text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none`}
+            className="w-full h-22 p-4 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-none resize-none"
             disabled={isGenerating}
             aria-invalid={overLimit}
             aria-describedby="prompt-hint prompt-count"
           />
 
           <div className="mt-2 flex items-center justify-between text-sm">
-            <p className="text-sm">
-              {overLimit
-                ? <span className="text-red-600">ยาวเกินกำหนด กรุณาลดข้อความลงอีก {length - maxLength} ตัวอักษร</span>
-                : null}
-            </p>
-            <p id="prompt-count" className={counterClass}>
-              {length}/{maxLength}
-            </p>
+            <div className="flex gap-5 pl-5">
+              <p id="prompt-count" className={counterClass}>
+                {length}/{maxLength}
+              </p>
+              <p className="text-sm">
+                {overLimit
+                  ? <span className="text-red-600">ยาวเกินกำหนด กรุณาลดข้อความลงอีก {length - maxLength} ตัวอักษร</span>
+                  : null}
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              disabled={!canSubmit}
+              className="cursor-pointer py-4 px-10 rounded-xl text-white font-semibold bg-gradient-to-r from-orange-500 to-orange-500 shadow-md hover:shadow-lg  hover:from-orange-500 hover:to-orange-600 hover:scale-105 transition-all duration-300"
+            >
+              {isGenerating ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  กำลังสร้าง...
+                </div>
+              ) : (
+                "สร้างห้อง"
+              )}
+            </button>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            type="submit"
-            disabled={!canSubmit}
-            className="flex-1 bg-black text-white font-semibold py-4 px-6 rounded-xl hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-          >
-            {isGenerating ? (
-              <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                กำลังสร้าง...
-              </div>
-            ) : (
-              "สร้างห้อง"
-            )}
-          </button>
-        </div>
       </form>
     </div>
   );

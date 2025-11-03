@@ -6,6 +6,7 @@ from .filter.models.schemas import ResponseStructor # โครงสร้า�
 from .filter.gate_service import gate # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 from .filter.client import get_openai_api_key # ฟังก์ชันดึงค่า OpenAI API Key
 from .generate.pipeline import pipeline # ฟังก์ชันหลักกรองและประมวลผลข้อความ
+from supabase import create_client, Client
 from dotenv import load_dotenv
 
 import os

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
@@ -10,19 +9,19 @@ import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
 
-import { getMessage } from "@/utils/api";
-import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
+import { getMessage, filterMessage, generateResponse } from "@/utils/api";
+import { insertPrompt, listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
 
-// แบบที่ backend ส่งมา เราจะเอามาใส่ใน state เดิมชื่อ products
+type Piece = { mime_type?: string; b64: string };
 type ProductItem = {
-  category?: string;
-  url?: string;
-  item_name?: string;
-  // ถ้ามี field อื่นจาก backend ก็ยังไม่พัง
+  category: string;
+  url: string;
+  item_name: string;
 };
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+const toDataUrl = (p: Piece) => `data:${p.mime_type ?? "image/png"};base64,${p.b64}`;
+const flattenTop = (arr: unknown[]) => arr.flatMap((x) => (Array.isArray(x) ? x : [x]));
+const isPiece = (x: unknown): x is Piece => !!x && typeof x === "object" && x !== null && "b64" in x;
 
 export default function MainPage() {
   const router = useRouter();
@@ -35,24 +34,18 @@ export default function MainPage() {
   const [rows, setRows] = useState<PromptRow[]>([]);
   const [err, setErr] = useState<string | null>(null);
 
-  // โหลดรายการ prompt ที่เคยบันทึกใน supabase
   const refreshPrompts = useCallback(async () => {
     try {
       setErr(null);
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
+      const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         setRows([]);
         return;
       }
-
       const data = await listStoragePrompts();
       setRows(data);
     } catch (e) {
-      const msg =
-        e instanceof Error ? e.message : "โหลดรายการ prompt ไม่ได้";
+      const msg = e instanceof Error ? e.message : "โหลดรายการ prompt ไม่ได้";
       if (msg === "Not signed in") {
         setRows([]);
         return;
@@ -61,7 +54,6 @@ export default function MainPage() {
     }
   }, []);
 
-  // ตอนโหลดหน้า: เช็ก API PY ยังอยู่ไหม + โหลดรายการ prompt
   useEffect(() => {
     (async () => {
       try {
@@ -74,12 +66,8 @@ export default function MainPage() {
     })();
   }, [refreshPrompts]);
 
-  // =============== ส่วนสำคัญ: ส่ง prompt ไปให้ FastAPI และอ่านผลกลับมา ===============
   const handleSubmit = async (prompt: string) => {
-    // ต้อง login ก่อน
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+    const { data: { session } } = await supabase.auth.getSession();
     if (!session) return router.replace("/login");
 
     setIsGenerating(true);
@@ -89,53 +77,51 @@ export default function MainPage() {
     setSelectedPrompt(prompt);
 
     try {
-      // เอา user_id ไปด้วย จะได้เก็บลงตาราง prompts ให้ถูกคน
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      const res = await fetch(`${API_BASE}/generate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          txt: prompt,
-          user_id: user?.id ?? null,
-        }),
-      });
-
-      if (!res.ok) {
-        const errJson = await res.json().catch(() => null);
-        throw new Error(errJson?.message || "สร้างภาพไม่สำเร็จ");
+      const res = await filterMessage(prompt);
+      if (res.label !== "INTERIOR_ROOM") {
+        setErr(res.error?.message || "สร้างภาพไม่ได้");
+        return;
       }
 
-      const json = await res.json();
-
-      // backend ส่ง {"status":"ok","data":[{...}]}
-      const row = Array.isArray(json.data) ? json.data[0] : null;
-      if (!row) {
-        throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
-      }
-
-      // รูป
-      if (row.image_url) {
-        setImage(row.image_url as string);
-      } else {
-        setImage(null);
-      }
-
-      // categories ใน DB ตอนนี้คือของที่รวมมาจาก pipeline แล้ว
-      if (Array.isArray(row.categories)) {
-        setProducts(row.categories as ProductItem[]);
-      } else {
-        setProducts([]);
-      }
-
-      // โหลดรายการเก่ามาโชว์ด้านล่าง
-      await refreshPrompts();
-    } catch (e) {
-      setErr(
-        e instanceof Error ? e.message : "เกิดข้อผิดพลาดระหว่างสร้างภาพ"
+      const genRes = await generateResponse(res.normalized_prompt);
+      const cleaned = (Array.isArray(genRes) ? genRes : [genRes]).filter(
+        (item) => !(Array.isArray(item) && item.length === 0)
       );
+      const items = flattenTop(cleaned).filter(Boolean);
+
+      const firstImg = items.find(isPiece);
+      if (!firstImg) {
+        setErr("ไม่พบภาพที่สร้าง");
+        return;
+      }
+
+      const productItems: ProductItem[] = [];
+      for (const item of items) {
+        if (isPiece(item)) continue;
+        if (
+          typeof item === "object" &&
+          item !== null &&
+          "category" in item &&
+          "url" in item &&
+          "item_name" in item
+        ) {
+          productItems.push(item as ProductItem);
+        }
+      }
+
+      setProducts(productItems);
+
+      const imageDataUrl = toDataUrl(firstImg);
+      setImage(imageDataUrl);
+
+      try {
+        await insertPrompt(prompt, imageDataUrl);
+        await refreshPrompts();
+      } catch (e) {
+        setErr(e instanceof Error ? e.message : "บันทึก prompt ไม่ได้");
+      }
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "เกิดข้อผิดพลาดระหว่างสร้างภาพ");
     } finally {
       setIsGenerating(false);
     }
@@ -153,52 +139,37 @@ export default function MainPage() {
     }
   };
 
+  // const gradient = {
+  //   background: "linear-gradient(120deg, rgba(21,93,252,0.2) 0%, rgba(245,73,0,0.2) 100%)",
+  // } as const;
+
   return (
     <main className="min-h-screen bg-white font-kanit">
-      <p className="absolute top-0 left-0 text-lg text-red-700">
-        status : {statusMsg}
-      </p>
+      <p className="absolute top-0 left-0 text-lg text-red-700">status : {statusMsg}</p>
 
       <Header />
 
       {image ? (
-        <div className="flex flex-col items-center justify-center p-4">
+        <div className="flex flex-col items-center justify-center p-4" >
           <div className="w-full max-w-7xl">
-            {/* ImageResult เดิมใช้ props ชื่อ products ก็ยังใช้ชื่อเดิมได้ */}
-            <ImageResult
-              imageUrl={image}
-              prompt={selectedPrompt}
-              products={products}
-            />
+            <ImageResult imageUrl={image} prompt={selectedPrompt} products={products} />
             <StoragePrompts rows={rows} onDelete={handleDelete} />
           </div>
         </div>
       ) : (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4">
+        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4" >
           <div className="w-full max-w-4xl text-center">
-            <h1 className="text-5xl md:text-6xl font-semibold text-black">
-              ออกแบบห้องในฝันของคุณได้ทันที
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-semibold text-black">ออกแบบห้องในฝันของคุณได้ทันที</h1>
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">
-              ด้วย <span className="text-orange-500">A</span>
-              <span className="text-blue-500">I</span> ของเรา
+              ด้วย <span className="text-orange-500">A</span><span className="text-blue-500">I</span> ของเรา
             </h2>
             <p className="text-lg md:text-xl text-black mb-8">
               พิมพ์สไตล์ของคุณแล้วปล่อยให้ Prompt2Room ทำให้มันมีชีวิตชีวา
             </p>
 
-            <PromptForm
-              onSubmit={handleSubmit}
-              isGenerating={isGenerating}
-              selectedPrompt={selectedPrompt}
-            />
+            <PromptForm onSubmit={handleSubmit} isGenerating={isGenerating} selectedPrompt={selectedPrompt} />
 
-            {!isGenerating && (
-              <ExamplePrompts
-                onSelectPrompt={handleSelectPrompt}
-                isGenerating={isGenerating}
-              />
-            )}
+            {!isGenerating && <ExamplePrompts onSelectPrompt={handleSelectPrompt} isGenerating={isGenerating} />}
 
             {err && <p className="mt-3 text-red-600">Error: {err}</p>}
           </div>

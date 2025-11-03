@@ -1,3 +1,4 @@
+import Image from "next/image";
 type ProductItem = {
   category: string;
   url: string;
@@ -13,8 +14,8 @@ interface ImageResultProps {
 export default function ImageResult({ imageUrl, prompt, products = [] }: ImageResultProps) {
   if (!imageUrl) return null;
 
-  console.log("ImageResult received products:", products);
-  console.log("Products count:", products.length);
+  // console.log("ImageResult received products:", products);
+  // console.log("Products count:", products.length);
 
   const productsByCategory = products.reduce((acc, product) => {
     if (!acc[product.category]) {
@@ -31,16 +32,18 @@ export default function ImageResult({ imageUrl, prompt, products = [] }: ImageRe
     return acc;
   }, {} as Record<string, ProductItem[]>)
 
-  console.log("Products by category:", productsByCategory);
-  console.log("Category count:", Object.keys(productsByCategory).length);
+  // console.log("Products by category:", productsByCategory);
+  // console.log("Category count:", Object.keys(productsByCategory).length);
 
   return (
-    <div className="mt-8">
-      <div className="text-center mb-6">
-        <img
+    <div className="mt-8 flex">
+      <div className="text-center flex flex-col items-center justify-items-center">
+        <Image
           src={imageUrl}
+          width={2000}
+          height={2000}
           alt="Generated Room"
-          className="mx-auto rounded-2xl shadow-lg w-full max-w-3xl"
+          className="rounded-2xl shadow-lg w-[80%] object-cover"
         />
         <p className="text-gray-600 mt-2">ผลลัพธ์จาก Prompt: &quot;{prompt}&quot;</p>
       </div>

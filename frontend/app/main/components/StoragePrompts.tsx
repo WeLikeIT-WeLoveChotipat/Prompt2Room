@@ -1,4 +1,5 @@
 import { type PromptRow } from "@/utils/prompts";
+import Image from "next/image";
 
 type StoragePromptsProps = {
   rows: PromptRow[];
@@ -13,8 +14,10 @@ export default function StoragePrompts({ rows, onDelete }: StoragePromptsProps) 
         {rows.map((r) => (
           <li key={r.id} className="border rounded-xl p-3 flex flex-row items-center gap-4">
             {r.image && (
-              <img
+              <Image
                 src={r.image}
+                width={1000}
+                height={1000}
                 alt="Generated"
                 className="w-36 h-24 object-cover rounded-lg border"
               />

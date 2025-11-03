@@ -17,7 +17,6 @@ type ProductItem = {
   category: string;
   url: string;
   item_name: string;
-  distance: number;
 };
 
 const toDataUrl = (p: Piece) => `data:${p.mime_type ?? "image/png"};base64,${p.b64}`;
@@ -140,9 +139,9 @@ export default function MainPage() {
     }
   };
 
-  const gradient = {
-    background: "linear-gradient(120deg, rgba(21,93,252,0.2) 0%, rgba(245,73,0,0.2) 100%)",
-  } as const;
+  // const gradient = {
+  //   background: "linear-gradient(120deg, rgba(21,93,252,0.2) 0%, rgba(245,73,0,0.2) 100%)",
+  // } as const;
 
   return (
     <main className="min-h-screen bg-white font-kanit">
@@ -151,14 +150,14 @@ export default function MainPage() {
       <Header />
 
       {image ? (
-        <div className="flex flex-col items-center justify-center p-4" style={gradient}>
+        <div className="flex flex-col items-center justify-center p-4" >
           <div className="w-full max-w-7xl">
             <ImageResult imageUrl={image} prompt={selectedPrompt} products={products} />
             <StoragePrompts rows={rows} onDelete={handleDelete} />
           </div>
         </div>
       ) : (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4" style={gradient}>
+        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4" >
           <div className="w-full max-w-4xl text-center">
             <h1 className="text-5xl md:text-6xl font-semibold text-black">ออกแบบห้องในฝันของคุณได้ทันที</h1>
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">

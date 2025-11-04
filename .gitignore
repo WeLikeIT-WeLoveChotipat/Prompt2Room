@@ -10,3 +10,4 @@ env/
 *.json
 *.ipynb
 .env
+node_modules

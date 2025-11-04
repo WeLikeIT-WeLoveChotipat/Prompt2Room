@@ -8,7 +8,6 @@ export default function Drivingforce() {
   return (
     <section className="bg-[#EAF2FB] py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* หัวข้อหลัก */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             แรงขับเคลื่อนของ Prompt2Room
@@ -22,7 +21,7 @@ export default function Drivingforce() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
+            <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Brainv2} alt="Brainv2" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -35,7 +34,7 @@ export default function Drivingforce() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
+            <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Think} alt="Think" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -48,7 +47,7 @@ export default function Drivingforce() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
+            <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Ml} alt="Ml" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -62,10 +61,10 @@ export default function Drivingforce() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-md p-8 md:p-10 flex flex-col justify-center hover:shadow-lg">
+          <div className="bg-white rounded-3xl shadow-md p-8 md:p-10 flex flex-col justify-center hover:shadow-lg hover:scale-105 duration-300">
             <div className="flex flex-col items-center mb-6 text-center">
               <div className="p-4 rounded-2xl mb-3">
-                <Image src={Paint} alt="Paint" className="w-[80px] h-[80px]" />
+                <Image src={Paint} alt="Paint" className="w-[80px] h-[80px]" width={100} height={100}/>
               </div>
               <h3 className="font-bold text-2xl text-gray-800">AI Design Process</h3>
             </div>

@@ -73,7 +73,7 @@ async def filter_prompt(request: Request):
 async def generate(request: Request):
     try:
         req_json = await request.json()
-        original_prompt = req_json["txt"]
+        original_prompt = req_json["original_prompt"]
         user_id = req_json.get("user_id")
 
         result = pipeline(req_json["txt"], API,model=MODEL)

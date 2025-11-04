@@ -12,7 +12,7 @@ import StoragePrompts from "./components/StoragePrompts";
 import WhyChooseSection from "./components/WhyChooseSection";
 import Footer from "@/app/ui/Footer";
 
-import { getMessage } from "@/utils/api";
+import { getMessage, filterMessage, generateResponse } from "@/utils/api";
 import {
   listStoragePrompts,
   deletePrompt,
@@ -102,39 +102,38 @@ export default function MainPage() {
     setSelectedPrompt(prompt);
 
     try {
-      const res = await fetch(`${API_BASE}/generate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          txt: prompt,
-          user_id: userId
-        }),
-      });
 
-      if (!res.ok) {
-        const errJson = await res.json().catch(() => null);
-        throw new Error(errJson?.message || "สร้างภาพไม่สำเร็จ");
-      }
+      const res = await filterMessage(prompt);
+        if (res.label == "INTERIOR_ROOM") {
+          console.log(`status: filtered`);
+          const genRes  = await generateResponse(prompt,res.normalized_prompt, userId);
+          if (genRes.status !== "ok") {
+            throw new Error(genRes?.error?.message ?? "สร้างภาพไม่สำเร็จ");
+          }
 
-      const json = await res.json();
+          const json = await genRes;
+          const row = Array.isArray(json.data) ? json.data[0] : null;
 
-      const row = Array.isArray(json.data) ? json.data[0] : null;
-      if (!row) {
-        throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
-      }
+          if (!row) {
+            throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
+          }
 
-      if (row.image_url) {
-        setImage(row.image_url as string);
-      } else {
-        setImage(null);
-      }
+          if (row.image_url) {
+            setImage(row.image_url as string);
+          } else {
+            setImage(null);
+          }
 
-      if (Array.isArray(row.categories)) {
-        setProducts(row.categories as ProductItem[]);
-      } else {
-        setProducts([]);
-      }
-
+          if (Array.isArray(row.categories)) {
+            setProducts(row.categories as ProductItem[]);
+          } else {
+            setProducts([]);
+          }
+        }
+        else{
+          console.log(res.error.message, res.error.reason);
+        }
+      // ดึงรายการ prompt ใหม่ของ user นี้
       await refreshPrompts(userId);
     } catch (e) {
       setErr(

@@ -16,9 +16,9 @@ export async function filterMessage(message: string) {
     body: JSON.stringify({"txt": message}),
   });
   return res.json();
-} 
+}
 
-export async function generateResponse(prompt: string) {
+export async function generateResponse(original_prompt: string,prompt: string ,userId: any) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -28,13 +28,14 @@ export async function generateResponse(prompt: string) {
   }
 
   const res = await fetch(`${API_BASE}/generate`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      txt: prompt,
-      user_id: user.id
-    }),
-  });
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          original_prompt: original_prompt,
+          txt: prompt,
+          user_id: userId
+        }),
+      });
 
   if (!res.ok) {
     const text = await res.text();

@@ -12,7 +12,7 @@ import StoragePrompts from "./components/StoragePrompts";
 import WhyChooseSection from "./components/WhyChooseSection";
 import Footer from "@/app/ui/Footer";
 
-import { getMessage, filterMessage, generateResponse } from "@/utils/api";
+import { filterMessage, generateResponse } from "@/utils/api";
 import {
   listStoragePrompts,
   deletePrompt,
@@ -25,13 +25,10 @@ type ProductItem = {
   item_name?: string;
 };
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+type ApiStatus = "loading" | "ok" | "error";
 
 export default function MainPage() {
   const router = useRouter();
-
-  const [statusMsg, setStatusMsg] = useState("Loading...");
   const [isGenerating, setIsGenerating] = useState(false);
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const [image, setImage] = useState<string | null>(null);
@@ -41,17 +38,25 @@ export default function MainPage() {
 
   const [userId, setUserId] = useState<string | null>(null);
 
+  const [apiStatus, setApiStatus] = useState<ApiStatus>("loading");
+  const [apiMessage, setApiMessage] = useState("Loading...");
+
   const refreshPrompts = useCallback(
     async (uid: string) => {
       try {
         setErr(null);
+        setApiStatus("loading");
+        setApiMessage("กำลังดึงข้อมูล");
         const data = await listStoragePrompts(uid);
-
         setRows(data);
+        setApiStatus("ok")
+        setApiMessage("ปกติแลัวมั่ง")
       } catch (e) {
         const msg =
-          e instanceof Error ? e.message : "โหลดรายการ prompt ไม่ได้";
-        setErr(msg);
+          e instanceof Error ? e.message : "ดึงข้อมูลไม่ได้"
+        setErr(msg)
+        setApiStatus("error")
+        setApiMessage(msg)
       }
     },
     []
@@ -59,111 +64,122 @@ export default function MainPage() {
 
   useEffect(() => {
     (async () => {
-      try {
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-        const uid = user?.id ?? null;
-        setUserId(uid);
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
 
-        try {
-          const res = await getMessage();
-          setStatusMsg(res.status);
-        } catch {
-          setStatusMsg("ต่อ API ยังไม่ได้ไอตูด");
-        }
-
-        if (uid) {
-          await refreshPrompts(uid);
-        } else {
-          setRows([]);
-        }
-      } catch {
-        setRows([]);
+      if (!user) {
+        router.replace("/login");
+        return;
       }
+
+      setUserId(user.id);
+      await refreshPrompts(user.id);
     })();
-  }, [refreshPrompts]);
+  }, [router, refreshPrompts]);
 
   const handleSubmit = async (prompt: string) => {
     const {
       data: { session },
     } = await supabase.auth.getSession();
-    if (!session) return router.replace("/login");
+    if (!session) return router.replace("/login")
 
     if (!userId) {
-      setErr("ไม่พบผู้ใช้");
+      const msg = "ไม่พบผู้ใช้"
+      setErr(msg)
+      setApiStatus("error")
+      setApiMessage(msg)
       return;
     }
 
     setIsGenerating(true);
     setErr(null);
     setImage(null);
-    setProducts([]);
-    setSelectedPrompt(prompt);
+    setProducts([])
+    setSelectedPrompt(prompt)
+    setApiStatus("loading")
+    setApiMessage("กำลังสร้างภาพ...")
 
     try {
-
       const res = await filterMessage(prompt);
-        if (res.label == "INTERIOR_ROOM") {
-          console.log(`status: filtered`);
-          const genRes  = await generateResponse(prompt,res.normalized_prompt, userId);
-          if (genRes.status !== "ok") {
-            throw new Error(genRes?.error?.message ?? "สร้างภาพไม่สำเร็จ");
-          }
 
-          const json = await genRes;
-          const row = Array.isArray(json.data) ? json.data[0] : null;
+      if (res.label !== "INTERIOR_ROOM") {
+        const msg =
+          res?.error?.message || "Promtนี้ยังไม่รองรับ (ไม่ใช่ห้องภายใน)"
+        setErr(msg)
+        setApiStatus("error")
+        setApiMessage(msg)
+        setIsGenerating(false)
+        return
+      }
 
-          if (!row) {
-            throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
-          }
-
-          if (row.image_url) {
-            setImage(row.image_url as string);
-          } else {
-            setImage(null);
-          }
-
-          if (Array.isArray(row.categories)) {
-            setProducts(row.categories as ProductItem[]);
-          } else {
-            setProducts([]);
-          }
-        }
-        else{
-          console.log(res.error.message, res.error.reason);
-        }
-      // ดึงรายการ prompt ใหม่ของ user นี้
-      await refreshPrompts(userId);
-    } catch (e) {
-      setErr(
-        e instanceof Error ? e.message : "เกิดข้อผิดพลาดระหว่างสร้างภาพ"
+      const genRes = await generateResponse(
+        prompt,
+        res.normalized_prompt,
+        userId
       );
+
+      if (genRes.status !== "ok") {
+        const msg = genRes?.error?.message ?? "สร้างภาพไม่สำเร็จ"
+        throw new Error(msg);
+      }
+
+      const json = await genRes
+      const row = Array.isArray(json.data) ? json.data[0] : null
+
+      if (!row) {
+        throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์")
+      }
+
+      if (row.image_url) {
+        setImage(row.image_url as string)
+      } else {
+        setImage(null)
+      }
+
+      if (Array.isArray(row.categories)) {
+        setProducts(row.categories as ProductItem[])
+      } else {
+        setProducts([])
+      }
+
+      setApiStatus("ok")
+      setApiMessage("สร้างภาพสำเร็จ")
+      await refreshPrompts(userId)
+    } catch (e) {
+      const msg =
+        e instanceof Error ? e.message : "เกิดข้อผิดพลาดระหว่างสร้างภาพ"
+      setErr(msg)
+      setApiStatus("error")
+      setApiMessage(msg)
     } finally {
-      setIsGenerating(false);
+      setIsGenerating(false)
     }
   };
 
-  const handleSelectPrompt = (p: string) => setSelectedPrompt(p);
+  const handleSelectPrompt = (p: string) => setSelectedPrompt(p)
 
   const handleDelete = async (id: number) => {
     if (!userId) return;
     try {
       setErr(null);
-      await deletePrompt(id);
-      await refreshPrompts(userId);
+      setApiStatus("loading")
+      setApiMessage("กำลังลบ prompt...")
+      await deletePrompt(id)
+      await refreshPrompts(userId)
+      setApiStatus("ok")
+      setApiMessage("ลบแล้ว")
     } catch (e) {
-      setErr(e instanceof Error ? e.message : "ลบไม่สำเร็จ");
+      const msg = e instanceof Error ? e.message : "ลบไม่สำเร็จ"
+      setErr(msg)
+      setApiStatus("error")
+      setApiMessage(msg)
     }
   };
 
   return (
     <main className="min-h-screen bg-gray-100 font-kanit">
-      <p className="absolute top-0 left-0 text-lg text-red-700">
-        status : {statusMsg}
-      </p>
-
-      <Navigation />
+      <Navigation apiStatus={apiStatus} apiMessage={apiMessage} />
 
       {image ? (
         <div className="min-h-[calc(90vh-80px)] flex flex-col items-center justify-center p-4 bg-gradient-to-b from-orange-200 via-orange-50 to-white">
@@ -201,18 +217,15 @@ export default function MainPage() {
                 isGenerating={isGenerating}
               />
             )}
-
-            {/* {err && <p className="mt-3 text-red-600">Error: {err}</p>} */}
           </div>
         </div>
       )}
 
-      {userId && (
-        <StoragePrompts rows={rows} onDelete={handleDelete} />
-      )}
+      <StoragePrompts rows={rows} onDelete={handleDelete} />
 
       <WhyChooseSection />
       <Footer />
     </main>
   );
 }
+

@@ -26,7 +26,7 @@ const features = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="px-[15%] lg:px-[10%] xl:px-[15%] py-[5%] bg-background relative overflow-hidden">
+    <section className="px-[15%] lg:px-[10%] xl:px-[15%] py-[5%] bg-background relative overflow-hidden bg-gradient-to-t from-blue-200 via-blue-50 to-white">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl animate-float" />
 
       <div className="container mx-auto max-w-6xl relative">

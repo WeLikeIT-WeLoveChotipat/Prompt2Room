@@ -1,6 +1,6 @@
 'use client'
 import Drivingforce from "./components/Drivingforce"
-import Footer from "../ui/footer"
+import Footer from "../ui/Footer"
 
 export default function About() {
   return (

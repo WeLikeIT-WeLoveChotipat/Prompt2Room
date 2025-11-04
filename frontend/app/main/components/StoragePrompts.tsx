@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type StoragePromptsProps = {
   id: number;
@@ -13,6 +14,8 @@ export default function StoragePrompts() {
   const [rows, setRows] = useState<StoragePromptsProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState<string | null>(null)
+  const [hasMore, setHasMore] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     (async () => {
@@ -31,15 +34,16 @@ export default function StoragePrompts() {
 
   const fetchPrompts = async (uid: string) => {
     setLoading(true);
-    const { data, error } = await supabase
+    const { data, count, error } = await supabase
       .from("prompts")
-      .select("id, prompt, image_url, created_at")
+      .select("id, prompt, image_url, created_at", { count: "exact" })
       .eq("user_id", uid)
       .order("created_at", { ascending: false })
-      .limit(4)
+      .limit(4);
 
     if (!error && data) {
-      setRows(data as StoragePromptsProps[]);
+      setRows(data as StoragePromptsRow[])
+      setHasMore((count ?? 0) > 4)
     }
     setLoading(false);
   };
@@ -51,7 +55,7 @@ export default function StoragePrompts() {
   };
 
   return (
-    <section className="px-[15%] sm:px-[2%] w-full max-w-[1480px] mx-auto">
+    <section className="px-[15%] sm:px-[2%] w-full max-w-[1480px] mx-auto pt-5">
       <div className="container mx-auto max-w-6xl relative">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-black mb-3">
@@ -73,7 +77,7 @@ export default function StoragePrompts() {
               <div className="w-full h-54 object-cover bg-gray-200" />
               <div className="p-5 space-y-4">
                 <div className="h-4 bg-gray-200 rounded w-3/4" />
-                <div className="h-4 bg-gray-200 rounded w-3/4" />
+                <div className="h-4 bg-gray-200 rounded w-2/4" />
                 <div className="h-4 bg-gray-200 rounded w-1/4" />
                 <div className="h-4 bg-gray-200 rounded w-1/4" />
               </div>
@@ -81,7 +85,7 @@ export default function StoragePrompts() {
           ))}
         </div>
       ) : rows.length === 0 ? (
-        <p className="text-gray-400 text-sm">
+        <p className="text-gray-400 text-sm text-center">
           ยังไม่มี prompt — ลองพิมพ์ด้านบนแล้วกด “สร้างห้อง”
         </p>
       ) : (
@@ -129,6 +133,18 @@ export default function StoragePrompts() {
           ))}
         </div>
       )}
+
+      {hasMore && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => router.push("/gallery")}
+            className="px-6 py-2 rounded-full bg-orange-500 text-white bg-gradient-to-r duration-300 from-orange-500 to-orange-500 hover:shadow-lg hover:from-orange-500 hover:to-orange-600 hover:scale-105"
+          >
+            ดูเพิ่มเติม
+          </button>
+        </div>
+      )}
+
     </section>
   );
 }

@@ -20,7 +20,8 @@ def generate_detect_cutout(
     score_thresh: float = 0.25,
     pad_ratio: float = 0.04,
     min_side: int = 0,
-    yolo_model_path: Optional[str] = "yolov8n.pt"
+    yolo_model_path: Optional[str] = "yolov8n.pt",
+    model="gemini-2.0-flash-preview-image-generation",
 ) -> Dict[str, Any]:
     """
     1) สร้างภาพจาก Gemini
@@ -28,7 +29,7 @@ def generate_detect_cutout(
     3) ตัดพื้นหลังเฉพาะชิ้นด้วย rembg
     รีเทิร์นเป็น JSON พร้อม base64 ของรูปและชิ้นที่ตัดแล้ว
     """
-    images, model_text = generate_images(prompt, API_KEY=api_key)
+    images, model_text = generate_images(prompt, API_KEY=api_key,MODEL=model)
 
     if not images:
         return {"success": False, "reason": "no_image_generated"}
@@ -72,12 +73,14 @@ def generate_detect_cutout(
         "results": results
     }
 
-def pipeline(prompt: str,api_key: str):
+def pipeline(prompt: str,api_key: str,model: str):
     RUN_ON = "first"
     YOLO = "yolov8n.pt"
     THRESH = 0.35
     PAD = 0.12
     MINSZ = 0
+
+    MODEL = 'gemini-2.5-flash-image' if model.lower().strip() == 'gemini-2.5-flash-image' else "gemini-2.0-flash-preview-image-generation"
 
     out = generate_detect_cutout(
         prompt=prompt,
@@ -87,8 +90,8 @@ def pipeline(prompt: str,api_key: str):
         min_side=MINSZ,
         yolo_model_path=YOLO,
         api_key=api_key,
+        model=MODEL
     )
-
     furniture = []
     for i in out['results'][0]['cutouts']:
         for l, v in i.items():
@@ -98,8 +101,8 @@ def pipeline(prompt: str,api_key: str):
                 furniture.append({'label': label, 'b64': v})
 
     furniture_out = [img2search(path=i.get('b64') ,label=i.get('label')) for i in furniture]
-
-    return out["results"][0]['image'],*furniture_out
+    base64_image = out[0]['image']['b64']  if MODEL == 'gemini-2.5-flash-image' else out["results"][0]['image']
+    return base64_image, *furniture_out
 
 
 if __name__ == "__main__":

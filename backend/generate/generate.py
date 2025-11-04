@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-MODEL = "gemini-2.0-flash-preview-image-generation"
-
 def _auto_modalities(model: str, modalities: List[Literal["Text", "Image"]] | None):
     if modalities is not None:
         return modalities
@@ -20,6 +18,7 @@ def generate_images(
     prompt: str,
     API_KEY: str | None = None,
     modalities: List[Literal["Text", "Image"]] | None = None,
+    MODEL: str = "gemini-2.0-flash-preview-image-generation"
 ) -> Tuple[List[dict], str]:
     """
     เรียก Gemini ให้สร้างภาพจาก prompt แล้วรีเทิร์น:
@@ -31,6 +30,7 @@ def generate_images(
     use_modalities = _auto_modalities(MODEL, modalities)
 
     client = genai.Client(api_key=api_key)
+    # if 
     resp = client.models.generate_content(
         model=MODEL,
         contents=prompt,

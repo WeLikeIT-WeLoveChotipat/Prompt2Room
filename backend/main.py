@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .filter.prompt.prompt_styple import SYSTEM_INSTRUCTION
 from .filter.models.schemas import ResponseStructor # โครงสร้างข้อมูลผลลัพธ์จาก service
 from .filter.gate_service import gate # ฟังก์ชันหลักกรองและประมวลผลข้อความ
-from .filter.client import get_openai_api_key # ฟังก์ชันดึงค่า OpenAI API Key
+from .filter.client import get_openai_api_key, get_model_name # ฟังก์ชันดึงค่า OpenAI API Key
 from .generate.pipeline import pipeline # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 from supabase import create_client, Client
 from dotenv import load_dotenv
@@ -41,7 +41,7 @@ from .filter.client import get_openai_api_key
 from .generate.pipeline import pipeline
 
 API = get_openai_api_key()
-
+MODEL= get_model_name()
 
 @app.get("/")
 async def root():
@@ -76,7 +76,7 @@ async def generate(request: Request):
         original_prompt = req_json["txt"]
         user_id = req_json.get("user_id")
 
-        result = pipeline(req_json["txt"], API)
+        result = pipeline(req_json["txt"], API,model=MODEL)
 
         image_url = None
         categories = []

@@ -32,24 +32,33 @@ export default function ImageResult({ imageUrl, prompt, products = [] }: ImageRe
   return (
     <div className="mt-8 flex flex-col lg:flex-row gap-8">
       <div className="flex-1">
-        <div className="bg-white rounded-2xl shadow-md p-4 h-full flex flex-col">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Generated Room</h2>
-          <div className="w-full rounded-xl overflow-hidden bg-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl p-4 h-full flex flex-col">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Generated Room</h2>
+          <div className="w-full rounded-xl overflow-hidden bg-gray-100 aspect-[4/3]">
             <Image
               src={imageUrl}
-              width={1600}
-              height={900}
+              width={4000}
+              height={4000}
               alt="Generated Room"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
-          <p className="text-xl mt-3">
-            ผลลัพธ์จาก Prompt: “{prompt}”
-          </p>
+          <div className="flex justify-between pt-4">
+            <p className="text-bas text-gray-500 mt-3">
+              ผลลัพธ์จาก Prompt: “{prompt}”
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="py-2 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md text-white bg-gradient-to-r from-blue-500 to-blue-500 hover:shadow-lg hover:from-blue-500 hover:to-blue-600 hover:scale-105"
+            >
+              Re-Generated
+            </button>
+          </div>
+          
         </div>
       </div>
 
-      <div className="w-full lg:w-90 bg-white rounded-2xl shadow-md p-6 h-fit">
+      <div className="w-full lg:w-90 bg-white rounded-2xl shadow-xl p-6 h-fit">
         <h3 className="text-2xl font-semibold text-gray-900 mb-5">สินค้าแนะนำตาม Category</h3>
 
         {Object.keys(productsByCategory).length > 0 ? (

@@ -9,7 +9,6 @@ const features = [
     title: "สร้างแบบห้องคุณภาพระดับมืออาชีพได้ทันที",
     description:
       "เพียงพิมพ์พรอมต์สั้น ๆ ก็ได้ภาพสมจริง โดยไม่ต้องใช้ซอฟต์แวร์ออกแบบ",
-    bgColor: "bg-yellow-100/30",
   },
   {
     icon: brain,
@@ -49,7 +48,7 @@ export default function WhyChooseSection() {
           >
             <div className="p-8 text-center space-y-5">
               <div
-                className={`w-30 h-30 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500`}
+                className={"w-30 h-30 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500"}
               >
                 <Image
                   src={feature.icon}

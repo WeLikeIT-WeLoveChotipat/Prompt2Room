@@ -131,7 +131,7 @@ export default function MainPage() {
           }
         }
         else{
-          console.log(res.message, res.reason);
+          console.log(res.error.message, res.error.reason);
         }
       // ดึงรายการ prompt ใหม่ของ user นี้
       await refreshPrompts(userId);

@@ -9,7 +9,7 @@ import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
 import WhyChooseSection from "./components/WhyChooseSection";
-import Footer from "@/app/ui/Footer";
+import Footer from "../ui/footer";
 
 import { getMessage } from "@/utils/api";
 import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";

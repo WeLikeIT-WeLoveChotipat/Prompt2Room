@@ -15,4 +15,4 @@ sentence_transformers
 numpy
 pandas
 supabase
-python-multipar
+python-multipart

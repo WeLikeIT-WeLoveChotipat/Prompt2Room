@@ -39,7 +39,7 @@ export default function StoragePrompts() {
       .limit(4)
 
     if (!error && data) {
-      setRows(data as  StoragePromptsProps[]);
+      setRows(data as StoragePromptsProps[]);
     }
     setLoading(false);
   };
@@ -51,7 +51,7 @@ export default function StoragePrompts() {
   };
 
   return (
-    <section className="w-full max-w-[1480px] mx-auto">
+    <section className="px-[15%] sm:px-[2%] w-full max-w-[1480px] mx-auto">
       <div className="container mx-auto max-w-6xl relative">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-black mb-3">
@@ -70,11 +70,12 @@ export default function StoragePrompts() {
               key={i}
               className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 animate-pulse"
             >
-              <div className="w-full h-54 bg-gray-200" />
-              <div className="p-5 space-y-3">
+              <div className="w-full h-54 object-cover bg-gray-200" />
+              <div className="p-5 space-y-4">
                 <div className="h-4 bg-gray-200 rounded w-3/4" />
-                <div className="h-3 bg-gray-100 rounded w-1/2" />
-                <div className="h-6 bg-gray-100 rounded w-1/3" />
+                <div className="h-4 bg-gray-200 rounded w-3/4" />
+                <div className="h-4 bg-gray-200 rounded w-1/4" />
+                <div className="h-4 bg-gray-200 rounded w-1/4" />
               </div>
             </div>
           ))}
@@ -99,7 +100,7 @@ export default function StoragePrompts() {
                   className="w-full h-54 object-cover"
                 />
               ) : (
-                <div className="w-full h-48 bg-gray-100" />
+                <div className="w-full h-54 bg-gray-100" />
               )}
               <div className="p-5">
                 <p className="text-xl font-semibold text-gray-800 line-clamp-2">

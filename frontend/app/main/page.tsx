@@ -4,13 +4,13 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
-import Header from "./components/Header";
+import Navigation from "../ui/Navigation";
 import PromptForm from "./components/PromptForm";
 import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
 import WhyChooseSection from "./components/WhyChooseSection";
-import Footer from "../ui/footer";
+import Footer from "@/app/ui/Footer";
 
 import { getMessage, filterMessage, generateResponse } from "@/utils/api";
 import {
@@ -131,7 +131,7 @@ export default function MainPage() {
           }
         }
         else{
-          console.log(res.message, res.reason);
+          console.log(res.error.message, res.error.reason);
         }
       // ดึงรายการ prompt ใหม่ของ user นี้
       await refreshPrompts(userId);
@@ -163,11 +163,11 @@ export default function MainPage() {
         status : {statusMsg}
       </p>
 
-      <Header />
+      <Navigation />
 
       {image ? (
-        <div className="flex flex-col items-center justify-center p-4">
-          <div className="w-full max-w-7xl">
+        <div className="min-h-[calc(90vh-80px)] flex flex-col items-center justify-center p-4 bg-gradient-to-b from-orange-200 via-orange-50 to-white">
+          <div className="w-full max-w-6xl">
             <ImageResult
               imageUrl={image}
               prompt={selectedPrompt}
@@ -176,7 +176,7 @@ export default function MainPage() {
           </div>
         </div>
       ) : (
-        <div className="min-h-[calc(80vh-80px)] flex flex-col items-center justify-center p-4">
+        <div className="min-h-[calc(90vh-80px)] flex flex-col items-center justify-center p-4 bg-gradient-to-b from-orange-200 via-orange-50 to-white">
           <div className="w-full max-w-4xl text-center">
             <h1 className="text-5xl md:text-6xl font-semibold text-black">
               ออกแบบห้องในฝันของคุณได้ทันที
@@ -207,7 +207,9 @@ export default function MainPage() {
         </div>
       )}
 
-      <StoragePrompts rows={rows} onDelete={handleDelete} />
+      {userId && (
+        <StoragePrompts rows={rows} onDelete={handleDelete} />
+      )}
 
       <WhyChooseSection />
       <Footer />

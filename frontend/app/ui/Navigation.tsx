@@ -73,10 +73,10 @@ export default function Navigation({
           );
           if (res.ok) {
             setLocalStatus("ok")
-            setLocalMessage("Server: Connected")
+            setLocalMessage("ปกติสุดแลัว")
           } else {
             setLocalStatus("error")
-            setLocalMessage("Server: Disconnected")
+            setLocalMessage("ตูมมมมมมม")
           }
         } catch {
           setLocalStatus("error")

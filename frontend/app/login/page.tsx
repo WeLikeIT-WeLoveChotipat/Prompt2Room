@@ -74,7 +74,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="font-kanit min-h-screen bg-white relative overflow-hidden flex items-center justify-center p-4">
+    <div className="font-kanit min-h-screen bg-gray-100  relative overflow-hidden flex items-center justify-center p-4">
       <Image
         height={2000}
         width={2000}

@@ -6,7 +6,7 @@ import Paint from "../../images/Paint.svg"
 
 export default function Drivingforce() {
   return (
-    <section className="bg-[#EAF2FB] py-20">
+    <section className="py-20 bg-gradient-to-t from-blue-200 via-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -15,7 +15,7 @@ export default function Drivingforce() {
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             ขับเคลื่อนด้วยเทคโนโลยีปัญญาประดิษฐ์ (AI) ที่ล้ำสมัย แพลตฟอร์มของเราสามารถแปลง
             “ข้อความคำสั่ง” ให้กลายเป็น “ภาพห้องเสมือนจริง” ได้อย่างสมบูรณ์แบบ
-            ทั้งในด้านแสง สี อารมณ์ และการจัดวางองค์ประกอบ
+            ทั้งในด้านแสง สี และการจัดวางองค์ประกอบ
           </p>
         </div>
 

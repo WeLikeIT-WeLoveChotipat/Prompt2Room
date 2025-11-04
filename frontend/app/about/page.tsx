@@ -4,15 +4,17 @@ import Footer from "../ui/footer"
 import Innovation from "./components/Innovation"
 import Goal from "./components/Goal"
 import Myteam from "./components/Myteam"
+import Navigation from "../ui/Navigation"
 
 export default function About() {
   return (
-    <section className="">
+    <section className="font-kanit bg-gray-100 ">
+      <Navigation />
       <Innovation />
       <Goal />
-      <Myteam/>
+      <Myteam />
       <Drivingforce />
-      <Footer/>
+      <Footer />
     </section>
   )
 }

@@ -6,7 +6,7 @@ import Cook from "../../images/cook.svg";
 
 export default function Goal() {
   return (
-    <section className="bg-[#EAF2FB] py-20">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
         <div className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-10">

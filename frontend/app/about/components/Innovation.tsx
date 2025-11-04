@@ -26,7 +26,7 @@ const features = [
 
 export default function Innovation() {
   return (
-    <section className="px-[15%] lg:px-[10%] xl:px-[15%] py-[5%] bg-background relative overflow-hidden">
+    <section className="pt-40 lg:px-[10%] xl:px-[15%] py-[5%] relative overflow-hidden bg-gradient-to-b from-orange-200 via-orange-50 to-white">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl animate-float" />
 
       <div className="container mx-auto max-w-6xl relative">
@@ -47,7 +47,7 @@ export default function Innovation() {
             className="group bg-white rounded-2xl shadow-md border border-transparent hover:border-orange-300 hover:shadow-xl transition-all duration-500 p-8 flex flex-col items-center text-center"
           >
             <div className="p-8 text-center space-y-5">
-              <div className={"w-30 h-30 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500 bg-[#FFF4ED]"}>
+              <div className={"w-20 h-30 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500 bg-[#FFF4ED]"}>
                 <Image
                   src={feature.icon}
                   alt={feature.title}

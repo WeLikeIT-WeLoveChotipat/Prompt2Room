@@ -21,10 +21,10 @@ export default function StatusBadge({
 
   const text =
     status === "ok"
-      ? "Server: Connected"
+      ? "ปกติที่สุดแลัว"
       : status === "loading"
-      ? "Server: Connecting..."
-      : "Server: Error";
+      ? "กำลังโหลด"
+      : "ตูมมมมมม";
 
   return (
     <div

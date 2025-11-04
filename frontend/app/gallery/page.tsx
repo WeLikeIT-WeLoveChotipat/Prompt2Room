@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Navigation from "../ui/Navigation";
-import Footer from "../ui/Footer";
+import Footer from "../ui/footer";
 
 type PromptItem = {
   id: number;
@@ -125,7 +125,7 @@ export default function GalleryPage() {
   };
 
   return (
-    <section className="min-h-[100vh] flex flex-col items-center justify-between bg-gradient-to-t from-blue-200 via-blue-100 to-white">
+    <section className="min-h-[100vh] flex flex-col items-center justify-between bg-gradient-to-t from-blue-200 via-blue-100 to-gray-100 ">
       <Navigation apiStatus={apiStatus} apiMessage={apiMessage} />
 
       <div className="pt-20 px-[15%] sm:px-[4%] w-full max-w-[1480px] mx-auto pb-16 font-kanit">

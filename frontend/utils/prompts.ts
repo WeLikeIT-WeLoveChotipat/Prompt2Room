@@ -28,17 +28,16 @@ export async function insertPrompt(text: string, imageUrl?: string | null) {
   return data as PromptRow
 }
 
-export async function listStoragePrompts() {
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) throw new Error("Not signed in")
-
+export async function listStoragePrompts(userId: string) {
   const { data, error } = await supabase
     .from("prompts")
-    .select("*")
+    .select("id, prompt, image_url, created_at")
+    .eq("user_id", userId)
     .order("created_at", { ascending: false })
+    .limit(20);
 
-  if (error) throw error
-  return (data || []) as PromptRow[]
+  if (error) throw error;
+  return data as PromptRow[];
 }
 
 export async function deletePrompt(id: number) {

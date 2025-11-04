@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
@@ -12,8 +13,11 @@ import WhyChooseSection from "./components/WhyChooseSection";
 import Footer from "../ui/footer";
 
 import { getMessage } from "@/utils/api";
-import { listStoragePrompts, deletePrompt, type PromptRow } from "@/utils/prompts";
-
+import {
+  listStoragePrompts,
+  deletePrompt,
+  type PromptRow,
+} from "@/utils/prompts";
 
 type ProductItem = {
   category?: string;
@@ -35,40 +39,48 @@ export default function MainPage() {
   const [rows, setRows] = useState<PromptRow[]>([]);
   const [err, setErr] = useState<string | null>(null);
 
-  const refreshPrompts = useCallback(async () => {
-    try {
-      setErr(null);
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+  const [userId, setUserId] = useState<string | null>(null);
 
-      if (!user) {
-        setRows([]);
-        return;
-      }
+  const refreshPrompts = useCallback(
+    async (uid: string) => {
+      try {
+        setErr(null);
+        const data = await listStoragePrompts(uid);
 
-      const data = await listStoragePrompts();
-      setRows(data);
-    } catch (e) {
-      const msg =
-        e instanceof Error ? e.message : "โหลดรายการ prompt ไม่ได้";
-      if (msg === "Not signed in") {
-        setRows([]);
-        return;
+        setRows(data);
+      } catch (e) {
+        const msg =
+          e instanceof Error ? e.message : "โหลดรายการ prompt ไม่ได้";
+        setErr(msg);
       }
-      setErr(msg);
-    }
-  }, []);
+    },
+    []
+  );
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await getMessage();
-        setStatusMsg(res.status);
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        const uid = user?.id ?? null;
+        setUserId(uid);
+
+        try {
+          const res = await getMessage();
+          setStatusMsg(res.status);
+        } catch {
+          setStatusMsg("ต่อ API ยังไม่ได้ไอตูด");
+        }
+
+        if (uid) {
+          await refreshPrompts(uid);
+        } else {
+          setRows([]);
+        }
       } catch {
-        setStatusMsg("ต่อ API ยังไม่ได้ไอตูด");
+        setRows([]);
       }
-      await refreshPrompts();
     })();
   }, [refreshPrompts]);
 
@@ -78,6 +90,11 @@ export default function MainPage() {
     } = await supabase.auth.getSession();
     if (!session) return router.replace("/login");
 
+    if (!userId) {
+      setErr("ไม่พบผู้ใช้");
+      return;
+    }
+
     setIsGenerating(true);
     setErr(null);
     setImage(null);
@@ -85,17 +102,12 @@ export default function MainPage() {
     setSelectedPrompt(prompt);
 
     try {
-      // เอา user_id ไปด้วย จะได้เก็บลงตาราง prompts ให้ถูกคน
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
       const res = await fetch(`${API_BASE}/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           txt: prompt,
-          user_id: user?.id ?? null,
+          user_id: userId
         }),
       });
 
@@ -106,7 +118,6 @@ export default function MainPage() {
 
       const json = await res.json();
 
-      // backend ส่ง {"status":"ok","data":[{...}]}
       const row = Array.isArray(json.data) ? json.data[0] : null;
       if (!row) {
         throw new Error("ไม่พบข้อมูลจากเซิร์ฟเวอร์");
@@ -124,7 +135,8 @@ export default function MainPage() {
         setProducts([]);
       }
 
-      await refreshPrompts();
+      // ดึงรายการ prompt ใหม่ของ user นี้
+      await refreshPrompts(userId);
     } catch (e) {
       setErr(
         e instanceof Error ? e.message : "เกิดข้อผิดพลาดระหว่างสร้างภาพ"
@@ -137,10 +149,11 @@ export default function MainPage() {
   const handleSelectPrompt = (p: string) => setSelectedPrompt(p);
 
   const handleDelete = async (id: number) => {
+    if (!userId) return;
     try {
       setErr(null);
       await deletePrompt(id);
-      await refreshPrompts();
+      await refreshPrompts(userId);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "ลบไม่สำเร็จ");
     }
@@ -196,6 +209,7 @@ export default function MainPage() {
         </div>
       )}
 
+      {/* ส่ง rows ที่โหลดแล้วจาก state ไปให้ component แสดง */}
       <StoragePrompts rows={rows} onDelete={handleDelete} />
 
       <WhyChooseSection />

@@ -12,43 +12,42 @@ type StoragePromptsProps = {
 export default function StoragePrompts() {
   const [rows, setRows] = useState<StoragePromptsProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [userId, setUserId] = useState<string | null>(null)
 
-  const fetchPrompts = async () => {
+  useEffect(() => {
+    (async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+      if (user) {
+        setUserId(user.id)
+        await fetchPrompts(user.id)
+      } else {
+        setRows([])
+        setLoading(false)
+      }
+    })()
+  }, [])
+
+  const fetchPrompts = async (uid: string) => {
     setLoading(true);
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      setRows([]);
-      setLoading(false);
-      return;
-    }
-
     const { data, error } = await supabase
       .from("prompts")
       .select("id, prompt, image_url, created_at")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false });
+      .eq("user_id", uid)
+      .order("created_at", { ascending: false })
+      .limit(4)
 
     if (!error && data) {
-      setRows(data as StoragePromptsProps[]);
+      setRows(data as  StoragePromptsProps[]);
     }
-
     setLoading(false);
   };
 
-  useEffect(() => {
-    fetchPrompts();
-  }, []);
-
   const handleDelete = async (id: number) => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return;
-    await supabase.from("prompts").delete().eq("id", id).eq("user_id", user.id);
-    await fetchPrompts();
+    if (!userId) return;
+    await supabase.from("prompts").delete().eq("id", id).eq("user_id", userId);
+    setRows((prev) => prev.filter((p) => p.id !== id));
   };
 
   return (
@@ -58,7 +57,21 @@ export default function StoragePrompts() {
       </h2>
 
       {loading ? (
-        <p className="text-gray-500 text-sm">กำลังโหลด...</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 animate-pulse"
+            >
+              <div className="w-full h-48 bg-gray-200" />
+              <div className="p-5 space-y-3">
+                <div className="h-4 bg-gray-200 rounded w-3/4" />
+                <div className="h-3 bg-gray-100 rounded w-1/2" />
+                <div className="h-6 bg-gray-100 rounded w-1/3" />
+              </div>
+            </div>
+          ))}
+        </div>
       ) : rows.length === 0 ? (
         <p className="text-gray-400 text-sm">
           ยังไม่มี prompt — ลองพิมพ์ด้านบนแล้วกด “สร้างห้อง”
@@ -70,7 +83,7 @@ export default function StoragePrompts() {
               key={r.id}
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100"
             >
-              {r.image_url && (
+              {r.image_url ? (
                 <Image
                   src={r.image_url}
                   width={600}
@@ -78,6 +91,8 @@ export default function StoragePrompts() {
                   alt="Generated Room"
                   className="w-full h-48 object-cover"
                 />
+              ) : (
+                <div className="w-full h-48 bg-gray-100" />
               )}
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
@@ -96,7 +111,7 @@ export default function StoragePrompts() {
                   </span>
                   <button
                     onClick={() => handleDelete(r.id)}
-                    className="text-sm rounded-2xl px-2 py-0.5 hover:bg-gray-300 text-red-500 hover:text-red-600 transition-colors"
+                    className="text-sm rounded-2xl px-2 py-0.5 hover:bg-gray-100 text-red-500 hover:text-red-600 transition-colors"
                   >
                     ลบ
                   </button>

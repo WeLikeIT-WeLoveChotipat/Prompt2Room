@@ -22,7 +22,7 @@ export default function Drivingforce() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm">
+            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Brainv2} alt="Brainv2" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -35,7 +35,7 @@ export default function Drivingforce() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm">
+            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Think} alt="Think" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -48,7 +48,7 @@ export default function Drivingforce() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm">
+            <div className="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
                 <Image src={Ml} alt="Ml" className="w-[50px] h-[50px] text-gray-800" />
               </div>
@@ -62,7 +62,7 @@ export default function Drivingforce() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-md p-8 md:p-10 flex flex-col justify-center">
+          <div className="bg-white rounded-3xl shadow-md p-8 md:p-10 flex flex-col justify-center hover:shadow-lg">
             <div className="flex flex-col items-center mb-6 text-center">
               <div className="p-4 rounded-2xl mb-3">
                 <Image src={Paint} alt="Paint" className="w-[80px] h-[80px]" />

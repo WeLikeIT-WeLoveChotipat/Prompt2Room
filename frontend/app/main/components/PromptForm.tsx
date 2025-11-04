@@ -102,7 +102,7 @@ export default function PromptForm({
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
+    <div className="bg-white rounded-3xl p-5 shadow-xl">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <textarea
@@ -111,7 +111,7 @@ export default function PromptForm({
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="เช่น สร้างห้องนอนสไตล์มินิมอลสีขาว พร้อมเตียงไม้สีธรรมชาติ..."
-            className="w-full h-22 p-4 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-none resize-none"
+            className="w-full h-20 p-4 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-none resize-none"
             disabled={isGenerating}
             aria-invalid={overLimit}
             aria-describedby="prompt-hint prompt-count"
@@ -134,7 +134,7 @@ export default function PromptForm({
             <button
               type="submit"
               disabled={!canSubmit}
-              className={"py-4 px-10 rounded-xl font-semibold transition-all duration-300 shadow-md text-white bg-gradient-to-r from-orange-500 to-orange-500 hover:shadow-lg hover:from-orange-500 hover:to-orange-600 hover:scale-105 disabled:cursor-not-allowed disabled:hover:scale-100"}
+              className={"cursor-pointer py-4 px-10 rounded-xl font-semibold transition-all duration-300 shadow-md text-white bg-gradient-to-r from-orange-500 to-orange-500 hover:shadow-lg hover:from-orange-500 hover:to-orange-600 hover:scale-105 hover:rotate-2 disabled:cursor-not-allowed disabled:hover:scale-100"}
             >
               {isGenerating ? (
                 <div className="flex items-center justify-center">

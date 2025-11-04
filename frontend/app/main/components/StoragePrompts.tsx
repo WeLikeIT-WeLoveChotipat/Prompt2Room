@@ -51,10 +51,17 @@ export default function StoragePrompts() {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-8">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-        My Generated Rooms
-      </h2>
+    <section className="w-full max-w-[1480px] mx-auto">
+      <div className="container mx-auto max-w-6xl relative">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-extrabold text-black mb-3">
+            แรงบันดาลใจล่าสุดของฉัน
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-gray-600">
+            ทุกแรงบันดาลใจเริ่มจากคำสั่งเล็ก ๆ ที่กลายเป็นผลงานชิ้นใหม่ของฉัน
+          </p>
+        </div>
+      </div>
 
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -63,7 +70,7 @@ export default function StoragePrompts() {
               key={i}
               className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 animate-pulse"
             >
-              <div className="w-full h-48 bg-gray-200" />
+              <div className="w-full h-54 bg-gray-200" />
               <div className="p-5 space-y-3">
                 <div className="h-4 bg-gray-200 rounded w-3/4" />
                 <div className="h-3 bg-gray-100 rounded w-1/2" />
@@ -77,11 +84,11 @@ export default function StoragePrompts() {
           ยังไม่มี prompt — ลองพิมพ์ด้านบนแล้วกด “สร้างห้อง”
         </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {rows.map((r) => (
             <div
               key={r.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100"
+              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:rotate-[-0.8deg] transition-all border border-gray-100 duration-300"
             >
               {r.image_url ? (
                 <Image
@@ -89,15 +96,15 @@ export default function StoragePrompts() {
                   width={600}
                   height={400}
                   alt="Generated Room"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-54 object-cover"
                 />
               ) : (
                 <div className="w-full h-48 bg-gray-100" />
               )}
               <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
+                <p className="text-xl font-semibold text-gray-800 line-clamp-2">
                   {r.prompt}
-                </h3>
+                </p>
                 <p className="text-gray-500 text-sm mt-1">
                   {new Date(r.created_at).toLocaleDateString("th-TH", {
                     day: "2-digit",
@@ -111,7 +118,7 @@ export default function StoragePrompts() {
                   </span>
                   <button
                     onClick={() => handleDelete(r.id)}
-                    className="text-sm rounded-2xl px-2 py-0.5 hover:bg-gray-100 text-red-500 hover:text-red-600 transition-colors"
+                    className="text-sm rounded-2xl px-2 py-0.5 hover:bg-gray-200 text-red-500 hover:text-red-600 transition-colors"
                   >
                     ลบ
                   </button>

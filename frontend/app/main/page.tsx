@@ -160,7 +160,7 @@ export default function MainPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white font-kanit">
+    <main className="min-h-screen bg-gray-100 font-kanit">
       <p className="absolute top-0 left-0 text-lg text-red-700">
         status : {statusMsg}
       </p>
@@ -168,7 +168,7 @@ export default function MainPage() {
       <Header />
 
       {image ? (
-        <div className="flex flex-col items-center justify-center p-4 bg-orange-500/30">
+        <div className="flex flex-col items-center justify-center p-4">
           <div className="w-full max-w-7xl">
             <ImageResult
               imageUrl={image}
@@ -178,7 +178,7 @@ export default function MainPage() {
           </div>
         </div>
       ) : (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-4 bg-orange-500/30">
+        <div className="min-h-[calc(80vh-80px)] flex flex-col items-center justify-center p-4">
           <div className="w-full max-w-4xl text-center">
             <h1 className="text-5xl md:text-6xl font-semibold text-black">
               ออกแบบห้องในฝันของคุณได้ทันที
@@ -204,12 +204,11 @@ export default function MainPage() {
               />
             )}
 
-            {err && <p className="mt-3 text-red-600">Error: {err}</p>}
+            {/* {err && <p className="mt-3 text-red-600">Error: {err}</p>} */}
           </div>
         </div>
       )}
 
-      {/* ส่ง rows ที่โหลดแล้วจาก state ไปให้ component แสดง */}
       <StoragePrompts rows={rows} onDelete={handleDelete} />
 
       <WhyChooseSection />

@@ -23,7 +23,7 @@ export default function Drivingforce() {
           <div className="space-y-8">
             <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
-                <Image src={Brainv2} alt="Brainv2" className="w-[50px] h-[50px] text-gray-800" />
+                <Image src={Brainv2} alt="Brainv2" className="w-[50px] h-[50px] text-gray-800" width={100} height={100} />
               </div>
               <div>
                 <h3 className="font-bold text-lg">Advanced Neural Networks</h3>
@@ -36,7 +36,7 @@ export default function Drivingforce() {
 
             <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
-                <Image src={Think} alt="Think" className="w-[50px] h-[50px] text-gray-800" />
+                <Image src={Think} alt="Think" className="w-[50px] h-[50px] text-gray-800" width={100} height={100} />
               </div>
               <div>
                 <h3 className="font-bold text-lg">Natural Language Processing (NLP)</h3>
@@ -49,7 +49,7 @@ export default function Drivingforce() {
 
             <div className="hover:scale-105 duration-300 flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm hover:shadow-lg">
               <div className="bg-gray-100 p-3 rounded-xl">
-                <Image src={Ml} alt="Ml" className="w-[50px] h-[50px] text-gray-800" />
+                <Image src={Ml} alt="Ml" className="w-[50px] h-[50px] text-gray-800" width={100} height={100} />
               </div>
               <div>
                 <h3 className="font-bold text-lg">3D Rendering Engine</h3>

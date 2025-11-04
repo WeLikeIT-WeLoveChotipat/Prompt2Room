@@ -10,7 +10,7 @@ import ExamplePrompts from "./components/ExamplePrompts";
 import ImageResult from "./components/ImageResult";
 import StoragePrompts from "./components/StoragePrompts";
 import WhyChooseSection from "./components/WhyChooseSection";
-import Footer from "@/app/ui/Footer";
+import Footer from "@/app/ui/footer";
 
 import { getMessage, filterMessage, generateResponse } from "@/utils/api";
 import {

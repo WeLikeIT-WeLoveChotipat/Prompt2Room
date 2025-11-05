@@ -54,7 +54,8 @@ npm run dev
 ### 2 ติดตั้ง Frontend
 ```bash
 # สร้าง virtual environment (ทำครั้งแรก)
-python -m venv env
+python3 -m venv env # macOS / Linux
+python -m venv env # Windows
 
 # เปิดใช้งาน env
 source env/bin/activate # macOS / Linux

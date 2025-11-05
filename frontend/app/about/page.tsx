@@ -8,7 +8,7 @@ import Navigation from "../ui/Navigation"
 
 export default function About() {
   return (
-    <section className="font-kanit bg-gray-100 ">
+    <section className="font-kanit ">
       <Navigation />
       <Innovation />
       <Goal />

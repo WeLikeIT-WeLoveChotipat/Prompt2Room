@@ -1,8 +1,6 @@
-from fastapi import FastAPI, Request, HTTPException, status
+from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from .filter.prompt.prompt_styple import SYSTEM_INSTRUCTION
-from .filter.models.schemas import ResponseStructor # โครงสร้างข้อมูลผลลัพธ์จาก service
 from .filter.gate_service import gate # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 from .filter.client import get_openai_api_key, get_model_name # ฟังก์ชันดึงค่า OpenAI API Key
 from .generate.pipeline import pipeline # ฟังก์ชันหลักกรองและประมวลผลข้อความ
@@ -35,10 +33,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-from .filter.gate_service import gate
-from .filter.client import get_openai_api_key
-from .generate.pipeline import pipeline
 
 API = get_openai_api_key()
 MODEL= get_model_name()

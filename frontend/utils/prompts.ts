@@ -4,7 +4,7 @@ export type PromptRow = {
   id: number
   user_id: string
   prompt: string
-  image: string | null
+  image_url: string | null 
   created_at: string
 }
 
@@ -17,7 +17,7 @@ export async function insertPrompt(text: string, imageUrl?: string | null) {
 
   const { data, error } = await supabase
     .from("prompts")
-    .insert({ user_id: user.id, prompt: clean, image: imageUrl || null })
+    .insert({ user_id: user.id, prompt: clean, image_url: imageUrl ?? null })
     .select("*")
     .single()
 

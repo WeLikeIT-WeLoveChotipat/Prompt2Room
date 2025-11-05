@@ -42,7 +42,7 @@ export default function StoragePrompts() {
       .limit(4);
 
     if (!error && data) {
-      setRows(data as StoragePromptsRow[])
+      setRows(data as StoragePromptsProps[])
       setHasMore((count ?? 0) > 4)
     }
     setLoading(false);
@@ -55,7 +55,7 @@ export default function StoragePrompts() {
   };
 
   return (
-    <section className="px-[15%] sm:px-[2%] w-full max-w-[1480px] mx-auto pt-5">
+    <section className="px-[15%] sm:px-[2%] w-full max-w-[1480px] mx-auto py-5">
       <div className="container mx-auto max-w-6xl relative">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-black mb-3">

@@ -20,9 +20,9 @@ import {
 } from "@/utils/prompts";
 
 type ProductItem = {
-  category?: string;
-  url?: string;
-  item_name?: string;
+  category: string;
+  url: string;
+  item_name: string;
 };
 
 type ApiStatus = "loading" | "ok" | "error";
@@ -68,10 +68,7 @@ export default function MainPage() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      // if (!user) {
-      //   router.replace("/login");
-      //   return;
-      // }
+      if (!user) return
 
       setUserId(user.id);
       await refreshPrompts(user.id);
@@ -221,7 +218,7 @@ export default function MainPage() {
         </div>
       )}
 
-      <StoragePrompts rows={rows} onDelete={handleDelete} />
+      <StoragePrompts />
 
       <WhyChooseSection />
       <Footer />

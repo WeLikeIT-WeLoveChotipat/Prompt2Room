@@ -1,0 +1,314 @@
+Item_name,ID,Category,URL,Image_file
+KLIPPAN คลิปปัน,1.0,couch,https://www.ikea.com/th/th/p/klippan-2-seat-sofa-vissle-green-s59561664/,couch/couch1.png
+HEMLINGBY เฮมลิงบี,2.0,couch,https://www.ikea.com/th/th/p/hemlingby-2-seat-sofa-knisa-dark-grey-70434368/,couch/couch2.png
+ESSEBODA เอ็สเซบูดา,3.0,couch,https://www.ikea.com/th/th/p/esseboda-3-seat-sofa-knaebaeck-anthracite-brown-s39443520/,couch/couch3.png
+SÖDERHAMN เซอเดอร์ฮัมน์,4.0,couch,http://ikea.com/th/th/p/soederhamn-3-seat-section-viarp-beige-brown-s69305616/,couch/couch4.png
+FRIHETEN ฟรีเฮตเตน,5.0,couch,https://www.ikea.com/th/th/p/friheten-corner-sofa-bed-with-storage-skiftebo-dark-grey-s09216755/,couch/couch5.png
+GLOSTAD กลูสตอด,6.0,couch,https://www.ikea.com/th/th/p/glostad-2-seat-sofa-knisa-dark-grey-10489009/,couch/couch6.png
+VIMLE วิมเล,7.0,couch,https://www.ikea.com/th/th/p/vimle-2-seat-sofa-saxemara-black-blue-s49399017/#content,couch/couch7.png
+SMEDSTORP สเมียดสตอร์ป,8.0,couch,https://www.ikea.com/th/th/p/smedstorp-2-seat-sofa-lejde-red-brown-birch-s79463653/,couch/couch8.png
+FRIDHULT ฟรีดฮุลท์,9.0,couch,https://www.ikea.com/th/th/p/fridhult-sofa-bed-knisa-light-grey-60355762/#content,couch/couch9.png
+EKTORP เอียคทอร์ป,10.0,couch,https://www.ikea.com/th/th/p/ektorp-2-seat-sofa-kilanda-dark-blue-s99509023/#content,couch/couch10.png
+LILLEHEM ลิลเลเฮม,11.0,couch,https://www.ikea.com/th/th/p/lillehem-2-seat-modular-sofa-gunnared-dark-grey-wood-s79471262/#content,couch/couch11.png
+LANDSKRONA ลันด์สครูน่า,12.0,couch,https://www.ikea.com/th/th/p/landskrona-three-seat-sofa-grann-bomstad-black-metal-s79031701/,couch/couch12.png
+STOCKHOLM สตอกโฮล์ม,13.0,couch,https://www.ikea.com/th/th/p/stockholm-three-seat-sofa-seglora-natural-30245044/,couch/couch13.png
+JÄTTEBO แยทตะโบ,14.0,couch,https://www.ikea.com/th/th/p/jaettebo-2-seat-modular-sofa-tonerud-grey-s89469503/#content,couch/couch14.png
+KIVIK ชีวิค,15.0,couch,https://www.ikea.com/th/th/p/kivik-4-seat-sofa-with-chaise-longue-tresund-anthracite-s99494385/#content,couch/couch15.png
+BÅRSLÖV บอร์ชเลิฟ,16.0,couch,https://www.ikea.com/th/th/p/barsloev-3-seat-sofa-bed-tibbleby-beige-grey-60541590/,couch/couch16.png
+HYLTARP ฮิลทาร์ป,17.0,couch,https://www.ikea.com/th/th/p/hyltarp-2-seat-sofa-bed-gransel-grey-s79514860/#content,couch/couch17.png
+KLIPPAN คลิปปัน,18.0,couch,https://www.ikea.com/th/th/p/klippan-2-seat-sofa-bomstad-black-10399315/,couch/couch18.png
+VISKAFORS วิสกาฟอร์ช,19.0,couch,https://www.ikea.com/th/th/p/viskafors-2-seat-sofa-lejde-anthracite-birch-s29443219/#content,couch/couch19.png
+EKHOLMA เอียคโฮลมา,20.0,couch,https://www.ikea.com/th/th/p/ekholma-2-seat-sofa-hakebo-dark-grey-s19537402/#content,couch/couch20.png
+KRYLBO คริลบู,1.0,chair,https://www.ikea.com/th/th/p/krylbo-chair-tonerud-blue-00566748/#content,chair/chair1.png
+DYVLINGE ดีฟลิงเง,2.0,chair,https://www.ikea.com/th/th/p/dyvlinge-swivel-easy-chair-kelinge-black-20570829/#content,chair/chair2.png
+TEODORES ทีโอดอเรส,3.0,chair,https://www.ikea.com/th/th/p/teodores-chair-blue-70530628/#content,chair/chair3.png
+LISABO ลิซาโบ,4.0,chair,https://www.ikea.com/th/th/p/lisabo-chair-ash-tallmyra-white-black-50561041/#content,chair/chair4.png
+VOXLÖV วอกซ์เลิฟ,5.0,chair,https://www.ikea.com/th/th/p/voxloev-chair-light-bamboo-10449264/,chair/chair5.png
+SANDSBERG ซันด์เบรย์,6.0,chair,https://www.ikea.com/th/th/p/sandsberg-chair-black-80605430/,chair/chair6.png
+VIHALS วีฮาลส์,7.0,chair,https://www.ikea.com/th/th/p/vihals-chair-white-tibbleby-beige-grey-10592761/,chair/chair7.png
+SKOGSTA สกูกสต้า,8.0,chair,https://www.ikea.com/th/th/p/skogsta-chair-acacia-70544871/#content,chair/chair8.png
+LILLÅNÄS ลิลัวเนส,9.0,chair,https://www.ikea.com/th/th/p/lillanaes-chair-chrome-plated-bomstad-black-40534760/#content,chair/chair9.png
+TOBIAS ทูเบียส,10.0,chair,https://www.ikea.com/th/th/p/tobias-chair-grey-chrome-plated-90349675/#content,chair/chair10.png
+KARLPETTER คาร์ลเพตเตร์,11.0,chair,https://www.ikea.com/th/th/p/karlpetter-chair-gunnared-medium-grey-sefast-white-s19481424/#content,chair/chair11.png
+GRÖNSTA เกรินสต้า,12.0,chair,https://www.ikea.com/th/th/p/groensta-chair-with-armrests-in-outdoor-grey-turquoise-90559753/#content,chair/chair12.png
+NÄSINGE แนซิงเง,13.0,chair,https://www.ikea.com/th/th/p/naesinge-chair-white-tibbleby-beige-grey-90587505/,chair/chair13.png
+PINNTORP พินน์ทอร์ป,14.0,chair,https://www.ikea.com/th/th/p/pinntorp-chair-red-stained-80529479/,chair/chair14.png
+ROSENTORP รูเซ็นทอร์ป,15.0,chair,https://www.ikea.com/th/th/p/rosentorp-chair-tibbleby-beige-grey-black-70614171/#content,chair/chair15.png
+TONSTAD ทุนสตัด,16.0,chair,https://www.ikea.com/th/th/p/tonstad-chair-fridtuna-light-beige-brown-oak-effect-s49599653/,chair/chair16.png
+BERGMUND แบรีมุนด์,17.0,chair,https://www.ikea.com/th/th/p/bergmund-chair-oak-effect-gunnared-medium-grey-s09384616/,chair/chair17.png
+YNGVAR ยิงวาร์,18.0,chair,https://www.ikea.com/th/th/p/yngvar-chair-anthracite-60417637/,chair/chair18.png
+BUSLÄTT บุสเล็ตต์,19.0,chair,https://www.ikea.com/th/th/p/buslaett-chair-white-pine-70601140/,chair/chair19.png
+ODGER อูดเยียร์,20.0,chair,https://www.ikea.com/th/th/p/odger-chair-anthracite-30457314/,chair/chair20.png
+LINNMON ลินมูน / ADILS อดิลส์,1.0,table,https://www.ikea.com/th/th/p/linnmon-adils-table-white-s09246408/#content,table/table1.png
+VIHALS วีฮาลส์,2.0,table,https://www.ikea.com/th/th/p/vihals-table-white-white-s69578517/,table/table2.png
+VOXLÖV วอกซ์เลิฟ,3.0,table,https://www.ikea.com/th/th/p/voxloev-dining-table-light-bamboo-60449266/,table/table3.png
+SKOGSTA สกูกสต้า,4.0,table,https://www.ikea.com/th/th/p/skogsta-dining-table-acacia-black-40419265/,table/table4.png
+DANDERYD ดันเดรีด,5.0,table,https://www.ikea.com/th/th/p/danderyd-dining-table-oak-veneer-white-30463857/,table/table5.png
+LAGKAPTEN ลาคแคปเทียน / OLOV อูลอฟ,6.0,table,https://www.ikea.com/th/th/p/lagkapten-olov-desk-white-s79417171/,table/table6.png
+HAUGA เฮากา,7.0,table,https://www.ikea.com/th/th/p/hauga-table-grey-birch-veneer-30579216/,table/table7.png
+TONSTAD ทุนสตัด,8.0,table,https://www.ikea.com/th/th/p/tonstad-table-brown-stained-oak-veneer-80600060/,table/table8.png
+MÖRBYLÅNGA เมอร์บีลองงา,9.0,table,https://www.ikea.com/th/th/p/moerbylanga-table-oak-veneer-brown-stained-80365802/,table/table9.png
+DOCKSTA ดอคสต้า,10.0,table,https://www.ikea.com/th/th/p/docksta-table-white-white-s79324997/,table/table10.png
+LISABO ลิซาโบ,11.0,table,https://www.ikea.com/th/th/p/lisabo-table-black-ash-veneer-80416496/,table/table11.png
+NORRÅKER นูร์ร็อกเกร์,12.0,table,https://www.ikea.com/th/th/p/norraker-table-birch-70428980/,table/table12.png
+NACKANÄS นักกาเนส,13.0,table,https://www.ikea.com/th/th/p/nackanaes-table-acacia-30518096/,table/table13.png
+PINNTORP พินน์ทอร์ป,14.0,table,https://www.ikea.com/th/th/p/pinntorp-table-light-brown-stained-white-stained-10529468/,table/table14.png
+NÄSINGE แนซิงเง,15.0,table,https://www.ikea.com/th/th/p/naesinge-table-white-50587507/,table/table15.png
+ÅLHULT อัวล์ฮุลท์,16.0,table,https://www.ikea.com/th/th/p/alhult-table-beige-brown-50600764/,table/table16.png
+STOCKHOLM 2025 สตอกโฮล์ม 2025,17.0,tabel,https://www.ikea.com/th/th/p/stockholm-2025-table-oak-veneer-oak-veneer-s39606588/,table/table17.png
+VITTSJÖ วิทท์เชอ,18.0,table,https://www.ikea.com/th/th/p/vittsjoe-coffee-table-black-brown-glass-00213313/#content,table/table18.png
+RELATERA เรลาเทียรา,19.0,table,https://www.ikea.com/th/th/p/relatera-desk-white-s99560083/,table/table19.png
+TROTTEN ทร็อตเตน,20.0,table,https://www.ikea.com/th/th/p/trotten-desk-white-s09424943/,table/table20.png
+IDANÄS อิดาแนส,1.0,bed,https://www.ikea.com/th/th/p/idanaes-upholstered-ottoman-bed-gunnared-dark-grey-60458977/,bed/bed1.png
+SLATTUM สลอททุม,2.0,bed,https://www.ikea.com/th/th/p/slattum-upholstered-bed-frame-vissle-dark-grey-20571249/,bed/bed2.png
+MALM มาล์ม,3.0,bed,https://www.ikea.com/th/th/p/malm-bed-frame-high-w-2-storage-boxes-white-luroey-s39199778/,bed/bed3.png
+KLEPPSTAD เคลปป์สตัด,4.0,bed,https://www.ikea.com/th/th/p/kleppstad-bed-frame-white-vissle-beige-30492671/,bed/bed4.png
+SLÄKT สเลค,5.0,bed,https://www.ikea.com/th/th/p/slaekt-bed-frame-w-storage-slatted-bedbase-white-s99291967/,bed/bed5.png
+SONGESAND ซองเงซันด์,6.0,bed,https://www.ikea.com/th/th/p/songesand-bed-frame-with-2-storage-boxes-white-luroey-s59241248/,bed/bed6.png
+GRIMSBU กริมส์บู,7.0,bed,https://www.ikea.com/th/th/p/grimsbu-bed-frame-grey-20458757/,bed/bed7.png
+TÄLLÅSEN ทัลลัวเซน,8.0,bed,https://www.ikea.com/th/th/p/taellasen-upholstered-bed-frame-kulsta-grey-green-90538925/,bed/bed8.png
+TÄRNKULLEN ทาร์นคูลเลน,9.0,bed,https://www.ikea.com/th/th/p/taernkullen-upholstered-bed-frame-vissle-beige-luroey-s39564362/,bed/bed9.png
+VEVELSTAD เวียเวลสตัด,10.0,bed,https://www.ikea.com/th/th/p/vevelstad-bed-frame-white-20518271/,bed/bed10.png
+VIHALS วีฮาลส์,11.0,bed,https://www.ikea.com/th/th/p/vihals-bed-frame-with-2-storage-boxes-white-luroey-s39581984/,bed/bed11.png
+SAGESUND เซจซุนด์,12.0,bed,https://www.ikea.com/th/th/p/sagesund-upholstered-bed-frame-diseroed-brown-50490384/,bed/bed12.png
+TUFJORD ทุฟยูร์ด,13.0,bed,https://www.ikea.com/th/th/p/tufjord-upholstered-bed-frame-tallmyra-black-blue-loenset-s49555343/#content,bed/bed13.png
+RAMNEFJÄLL รัมเนิฟแยล,14.0,bed,https://www.ikea.com/th/th/p/ramnefjaell-upholstered-bed-frame-kilanda-light-beige-luroey-s09560172/,bed/bed14.png
+STJÄRNÖ แควนเนอ,15.0,bed,https://www.ikea.com/th/th/p/stjaernoe-bed-frame-white-40579051/,bed/bed15.png
+GLADSTAD กลอดสท็อด,16.0,bed,https://www.ikea.com/th/th/p/gladstad-upholstered-bed-2-storage-boxes-kabusa-light-grey-s39406810/,bed/bed16.png
+TONSTAD ทุนสตัด,17.0,bed,https://www.ikea.com/th/th/p/tonstad-bed-frame-with-storage-brown-stained-oak-veneer-loenset-s89504592/,bed/bed17.png
+TARVA ทาร์ฟวา,18.0,bed,https://www.ikea.com/th/th/p/tarva-bed-frame-pine-20354463/,bed/bed18.png
+NESTTUN เนสท์ตุน,19.0,bed,https://www.ikea.com/th/th/p/nesttun-bed-frame-white-luroey-s99158020/,bed/bed19.png
+BJÖRKSNÄS บยอร์กสแนส,20.0,bed,https://www.ikea.com/th/th/p/bjoerksnaes-bed-frame-birch-luroey-s69247570/,bed/bed20.png
+NÄMMARÖ แนมมาเรอ,1.0,bench,https://www.ikea.com/th/th/p/naemmaroe-bench-with-backrest-outdoor-light-brown-stained-50510339/,bench/bench1.png
+PERJOHAN เพอร์ยูฮัน,2.0,bench,https://www.ikea.com/th/th/p/perjohan-bench-with-storage-pine-20501317/,bench/bench2.png
+NÄMMARÖ แนมมาเรอ,3.0,bench,https://www.ikea.com/th/th/p/naemmaroe-bench-outdoor-light-brown-stained-10510341/,bench/bench3.png
+MÖRBYLÅNGA เมอร์บีลองงา,4.0,bench,https://www.ikea.com/th/th/p/moerbylanga-bench-oak-veneer-brown-stained-30415814/,bench/bench4.png
+STOCKHOLM 2025 สตอกโฮล์ม 2025,5.0,bench,https://www.ikea.com/th/th/p/stockholm-2025-bench-with-pad-s89563954/,bench/bench5.png
+KLIMPFJÄLL คลีมป์เฟียลล์,6.0,bench,https://www.ikea.com/th/th/p/klimpfjaell-bench-grey-brown-60480389/,bench/bench6.png
+TOLKNING โทลค์นิง,7.0,bench,https://www.ikea.com/th/th/p/tolkning-bench-with-storage-handmade-rattan-60512658/,bench/bench7.png
+SMÅSTAD สมวสตัด,8.0,bench,https://www.ikea.com/th/th/p/smastad-bench-with-toy-storage-white-white-s99389153/,bench/bench8.png
+RÅGRUND รัวกรุนด์,9.0,bench,https://www.ikea.com/th/th/p/ragrund-bench-bamboo-40549417/,bench/bench9.png
+RAGGBERG แร็กเบิร์ก,10.0,bench,https://www.ikea.com/th/th/p/raggberg-bench-with-shoe-storage-pine-80611129/,bench/bench10.png
+TJUSIG ชูสสิก,11.0,bench,https://www.ikea.com/th/th/p/tjusig-bench-with-shoe-storage-black-10160861/,bench/bench11.png
+NORRMANSÖ นอรร์มานเซอ,12.0,bench,https://www.ikea.com/th/th/p/norrmansoe-bench-outdoor-acacia-90586695/,bench/bench12.png
+NIPÅSEN นิพัวเซ็น,13.0,bench,https://www.ikea.com/th/th/p/nipasen-bench-with-shoe-storage-black-00586143/,bench/bench13.png
+TÄRNÖ แทร์นเออ,14.0,bench,https://www.ikea.com/th/th/p/taernoe-bench-outdoor-foldable-black-light-brown-stained-80534904/,bench/bench14.png
+MACKAPÄR มักคาแพร์,15.0,bench,https://www.ikea.com/th/th/p/mackapaer-storage-bench-with-sliding-doors-white-80544489/,bench/bench15.png
+MUSKAN มูสคาน,16.0,bench,https://www.ikea.com/th/th/p/muskan-bench-white-50562465/,bench/bench16.png
+KALLSÖ คัลโซ,17.0,bench,https://www.ikea.com/th/th/p/kallsoe-storage-bench-grey-10599324/,bench/bench17.png
+LÄCKÖ เลคค์เออ,18.0,bench,https://www.ikea.com/th/th/p/laeckoe-2-seat-sofa-outdoor-grey-30522734/,bench/bench18.png
+VALTORP วัลทอร์พ,19.0,bench,https://www.ikea.com/th/th/p/valtorp-bench-with-storage-samsala-dark-yellow-green-50572780/,bench/bench19.png
+STOREDAMM สตูเรดามม์,20.0,bench,https://www.ikea.com/th/th/p/storedamm-bench-acacia-00576163/,bench/bench20.png
+"ทีวีแอลอีดี 40 นิ้ว NANO (FULL HD, LED, DIGITAL TV) LTV4001N",1.0,tv,https://www.homepro.co.th/p/1210452,tv/tv1.png
+"ทีวี แอลอีดี 43 นิ้ว TCL (4K, LED, GOOGLE TV) 43P6K",2.0,tv,https://www.homepro.co.th/p/1291301,tv/tv2.png
+"ทีวีแอลอีดี 43 นิ้ว HAIER (FULL HD, LED, GOOGLE TV) H43K85FFX",3.0,tv,https://www.homepro.co.th/p/1295416,tv/tv3.png
+แอลอีดี ทีวี 40 นิ้ว ACONATIC DIGITAL TV 40HD514AN (รับประกัน 1 ปี),4.0,tv,https://www.homepro.co.th/p/888120300047,tv/tv4.png
+"ทีวีแอลอีดี 43 นิ้ว SKYWORTH (FULL HD, LED, GOOGLE TV) 43E6800G",5.0,tv,https://www.homepro.co.th/p/1283785,tv/tv5.png
+"ทีวีแอลอีดี 43 นิ้ว LG (4K, LED, SMART TV) 43UA7350PSB.ATMQ",6.0,tv,https://www.homepro.co.th/p/1290871,tv/tv6.png
+"ทีวีแอลอีดี 40 นิ้ว HISENSE (FULL HD, LED, VIDAA) 40A4Q",7.0,tv,https://www.homepro.co.th/p/1296031,tv/tv7.png
+"ทีวีแอลอีดี 43 นิ้ว PHILIPS (FULL HD, LED, DIGITAL TV) 43PFT5019/67",8.0,tv,https://www.homepro.co.th/p/1264500,tv/tv8.png
+"ทีวีแอลอีดี 43 นิ้ว SAMSUNG (4K, LED, TIZEN) UA43U8000FKXXT",9.0,tv,https://www.homepro.co.th/p/1296575,tv/tv9.png
+"ทีวีแอลอีดี 43 นิ้ว SHARP (4K, LED, GOOGLE TV) 4T-C43HJ6000X",10.0,tv,https://www.homepro.co.th/p/1297991,tv/tv10.png
+"ทีวีแอลอีดี 43 นิ้ว SONY (4K, LED, GOOGLE TV) BRAVIA 2 II K-43S20M2",11.0,tv,https://www.homepro.co.th/p/1296313,tv/tv11.png
+"ทีวีแอลอีดี 43 นิ้ว TOSHIBA (FULL HD, LED, VIDAA) 43E31RP",12.0,tv,https://www.homepro.co.th/p/1297677,tv/tv12.png
+แอลอีดีทีวี 43 นิ้ว Smart WORLDTECH รุ่น WTTVSM43FHD210000A,13.0,tv,https://www.homepro.co.th/p/888163300032,tv/tv13.png
+"ทีวีแอลอีดี 43 นิ้ว XIAOMI (4K, LED, GOOGLE TV) A 43 U 2026",14.0,tv,https://www.homepro.co.th/p/1297943,tv/tv14.png
+FEJKA เฟคก้า ต้นก้ามปูหลุด,1.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-spiderwort-50493368/,plant/plant1.png
+FEJKA เฟคก้า ไพเลีย,2.0,plant,https://www.ikea.com/th/th/p/epipremnum-potted-plant-golden-pothos-assorted-colours-30562287/,plant/plant2.png
+DYPSIS LUTESCENS DYPSIS LUTESCENS ปาล์มหมาก,3.0,plant,https://www.ikea.com/th/th/p/dypsis-lutescens-potted-plant-areca-palm-60562262/,plant/plant3.png
+FEJKA เฟคก้า หญ้า,4.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-grass-80433943/,plant/plant4.png
+FEJKA เฟคก้า ต้น Weeping fig,5.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-weeping-fig-00491574/,plant/plant5.png
+FEJKA เฟคก้า ต้นผีเสื้อภูเขา,6.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-butterfly-plant-00600889/,plant/plant6.png
+VINTERFINT วินเตอร์ฟินท์ ต้นคริสต์มาส เขียว,7.0,plant,https://www.ikea.com/th/th/p/vinterfint-artificial-potted-plant-in-outdoor-christmas-tree-green-00606532/,plant/plant7.png
+FEJKA เฟคก้า ใบมอนสเตอรา,8.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-hanging-monstera-00608404/,plant/plant8.png
+FEJKA เฟคก้า เฟิร์น,9.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-fern-10433946/,plant/plant9.png
+FEJKA เฟคก้า ต้น Ivy,10.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-hanging-ivy-10461152/,plant/plant10.png
+ASPLENIUM อัสเพลียนีอุม Bird's Nest Fern,11.0,plant,https://www.ikea.com/th/th/p/asplenium-potted-plant-birds-nest-fern-10562269/,plant/plant11.png
+FEJKA เฟคก้า Bird of paradise,12.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-bird-of-paradise-10578072/,plant/plant12.png
+FEJKA เฟคก้า Alocasia,13.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-alocasia-10600879/,plant/plant13.png
+FEJKA เฟคก้า ต้นโกสน,14.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-croton-10600884/,plant/plant14.png
+FEJKA เฟคก้า ต้นกล้วย,15.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-banana-tree-10600898/,plant/plant15.png
+VINTERFINT วินเตอร์ฟินท์,16.0,plant,https://www.ikea.com/th/th/p/vinterfint-artificial-potted-plant-in-outdoor-poinsettia-white-10606635/,plant/plant16.png
+FEJKA เฟคก้า กล้วยไม้ ขาว,17.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-orchid-white-20294940/,plant/plant17.png
+FEJKA เฟคก้า ไม้ยูคาลิปตัส,18.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-eucalyptus-20452369/,plant/plant18.png
+FEJKA เฟคก้า ไม้ไผ่,19.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-bamboo-20568893/,plant/plant19.png
+FEJKA เฟคก้า มินต์,20.0,plant,https://www.ikea.com/th/th/p/fejka-artificial-potted-plant-in-outdoor-mint-20600869/,plant/plant20.png
+KARAFF คาราฟฟ์,1.0,vase,https://www.ikea.com/th/th/p/karaff-carafe-clear-glass-80342976/,vase/vase1.png
+VILJESTARK วีเลียตสตาร์ค,2.0,vase,https://www.ikea.com/th/th/p/viljestark-vase-clear-glass-80338578/,vase/vase2.png
+KÄLLARHALS เชลลาร์ฮัลส์,3.0,vase,https://www.ikea.com/th/th/p/kaellarhals-vase-yellow-80583720/,vase/vase3.png
+STILREN สตีลเรียน,4.0,vase,https://www.ikea.com/th/th/p/stilren-vase-white-60442038/,vase/vase4.png
+PÅDRAG พัวดรัก,5.0,vase,https://www.ikea.com/th/th/p/padrag-vase-clear-glass-50470989/,vase/vase5.png
+STOCKHOLM 2025 สตอกโฮล์ม 2025,6.0,vase,https://www.ikea.com/th/th/p/stockholm-2025-vase-brown-70590491/,vase/vase6.png
+FRÖVÄXT ฟรอแว็กซ์,7.0,vase,https://www.ikea.com/th/th/p/froevaext-vase-brown-orange-40591920/,vase/vase7.png
+PÄRLHÄGG แพร์ลแฮกก์,8.0,vase,https://www.ikea.com/th/th/p/paerlhaegg-vase-yellow-beige-20607309/,vase/vase8.png
+BLODBJÖRK บลูดบเยิร์ก,9.0,vase,https://www.ikea.com/th/th/p/blodbjoerk-vase-beige-50607303/,vase/vase9.png
+POMP พอมพ์,10.0,vase,https://www.ikea.com/th/th/p/pomp-vase-lantern-clear-glass-00326536/,vase/vase10.png
+PELARBJÖRK เพลาร์บเยิร์ก,11.0,vase,https://www.ikea.com/th/th/p/pelarbjoerk-vase-white-40607313/,vase/vase11.png
+SANNOLIK ซันนูลีค,12.0,vase,https://www.ikea.com/th/th/p/sannolik-vase-pink-20309786/,vase/vase12.png
+RÄFFELBJÖRK แรฟเฟิลบยอร์ค,13.0,vase,https://www.ikea.com/th/th/p/raeffelbjoerk-vase-mother-of-pearl-colour-20537665/,vase/vase13.png
+STILREN สตีลเรียน,14.0,vase,https://www.ikea.com/th/th/p/stilren-vase-white-90592366/,vase/vase14.png
+BLODBJÖRK บลูดบเยิร์ก,15.0,vase,https://www.ikea.com/th/th/p/blodbjoerk-vase-pale-pink-blue-90607301/,vase/vase15.png
+BERÄKNA เบแร็กนา,16.0,vase,https://www.ikea.com/th/th/p/beraekna-vase-clear-glass-50457775/,vase/vase16.png
+GRADVIS กราดวีส,17.0,vase,https://www.ikea.com/th/th/p/gradvis-vase-pink-00334701/,vase/vase17.png
+KONSTFULL คอนสต์ฟูล,18.0,vase,https://www.ikea.com/th/th/p/konstfull-vase-green-brown-00511954/,vase/vase18.png
+PÅSKÖTRÄD พอสเกอแทรด,19.0,vase,https://www.ikea.com/th/th/p/paskoetraed-vase-glass-light-brown-50610541/,vase/vase19.png
+SKOGSTUNDRA สกูกสทุนดรา,20.0,vase,https://www.ikea.com/th/th/p/skogstundra-vase-light-blue-00572099/,vase/vase20.png
+PLUTTIS พลุททีส,1.0,clock,https://www.ikea.com/th/th/p/pluttis-wall-clock-black-90540848/,clock/clock1.png
+DEKAD เดียคอด,2.0,clock,https://www.ikea.com/th/th/p/dekad-alarm-clock-white-70540477/,clock/clock2.png
+TROMMA ทรูมมา,3.0,clock,https://www.ikea.com/th/th/p/tromma-wall-clock-white-10557079/,clock/clock3.png
+BONDIS บูนดิส,4.0,clock,https://www.ikea.com/th/th/p/bondis-wall-clock-orange-70601710/,clock/clock4.png
+KUPONG คูพ็อง,5.0,clock,https://www.ikea.com/th/th/p/kupong-alarm-clock-bright-blue-70592126/,clock/clock5.png
+PLUGGET พลุกเกียต,6.0,clock,https://www.ikea.com/th/th/p/plugget-alarm-clock-black-70499128/,clock/clock6.png
+TJINGA ชิงย่า,7.0,clock,https://www.ikea.com/th/th/p/tjinga-alarm-clock-pale-yellow-20592124/,clock/clock7.png
+ROTBLÖTA รูตเบลอตา,8.0,clock,https://www.ikea.com/th/th/p/rotbloeta-wall-clock-ash-veneer-light-grey-20540856/,clock/clock8.png
+EFTERTÄNKA เอฟเตอร์แตงก้า,9.0,clock,https://www.ikea.com/th/th/p/eftertaenka-decorative-hourglass-clear-glass-sand-10495487/,clock/clock9.png
+KORVTRÄD คอร์ฟแทรด,10.0,clock,https://www.ikea.com/th/th/p/korvtraed-wall-clock-multicolour-00570335/,clock/clock10.png
+NOLLÅTTA นุลล์แลทต้า,11.0,clock,https://www.ikea.com/th/th/p/nollatta-alarm-clock-white-70499350/,clock/clock11.png
+TAGGAD ทอคกอด,12.0,clock,https://www.ikea.com/th/th/p/taggad-wall-clock-white-grey-80466293/,clock/clock12.png
+JÄNKIG แยนคิก,13.0,clock,https://www.ikea.com/th/th/p/jaenkig-wall-clock-copper-colour-50534038/,clock/clock13.png
+KUTTERSMYCKE กุตเติชมิกเก,14.0,clock,https://www.ikea.com/th/th/p/kuttersmycke-wall-clock-black-60520516/,clock/clock14.png
+PUGG พุกก์,15.0,clock,https://www.ikea.com/th/th/p/pugg-wall-clock-stainless-steel-70540854/,clock/clock15.png
+SÖNDRUM เซินดรุม,16.0,clock,https://www.ikea.com/th/th/p/soendrum-wall-clock-white-30540865/,clock/clock16.png
+IKEA PS 1995 อิเกีย พีเอส 1995,17.0,clock,https://www.ikea.com/th/th/p/ikea-ps-1995-clock-blue-00575069/,clock/clock17.png
+STURSK สตูร์ช,18.0,clock,https://www.ikea.com/th/th/p/stursk-wall-clock-black-80540863/,clock/clock18.png
+BONDTOLVAN บอนด์โทลวาน,19.0,clock,https://www.ikea.com/th/th/p/bondtolvan-alarm-clock-analog-pale-pink-70511012/,clock/clock19.png
+PLUGGET พลุกเกียต,20.0,clock,https://www.ikea.com/th/th/p/plugget-alarm-clock-white-20522720/,clock/clock20.png
+BILLY บิลลี่,1.0,book,https://www.ikea.com/th/th/p/billy-bookcase-black-oak-effect-20477341/#content,book/book1.png
+BAGGEBO บักเกบู,2.0,book,https://www.ikea.com/th/th/p/baggebo-bookcase-white-10483880/,book/book2.png
+BILLY บิลลี่ บานปิด,3.0,book,https://www.ikea.com/th/th/p/billy-bookcase-with-doors-white-s99528347/,book/book3.png
+LAIVA ไลว่า,4.0,book,https://www.ikea.com/th/th/p/laiva-bookcase-black-brown-20178592/,book/book4.png
+BILLY บิลลี่ / OXBERG อ็อกเบรย์,5.0,book,https://www.ikea.com/th/th/p/billy-oxberg-bookcase-with-glass-doors-white-s39545359/,book/book5.png
+BILLY บิลลี่ เข้ามุม+ส่วนขยาย,6.0,book,https://www.ikea.com/th/th/p/billy-bookcase-corner-comb-w-ext-units-white-s39528369/,book/book6.png
+BRIMNES บริมเนส,7.0,book,https://www.ikea.com/th/th/p/brimnes-bookcase-white-10351686/,book/book7.png
+HEMNES เฮมเนส,8.0,book,https://www.ikea.com/th/th/p/hemnes-bookcase-white-stain-light-brown-80413501/,book/book8.png
+LANESUND เลนซุนด์,9.0,book,https://www.ikea.com/th/th/p/lanesund-bookcase-grey-brown-40466544/,book/book9.png
+SKRUVBY สกรูฟบี,10.0,book,https://www.ikea.com/th/th/p/skruvby-bookcase-white-40508855/,book/book10.png
+TONSTAD ทุนสตัด,11.0,book,https://www.ikea.com/th/th/p/tonstad-bookcase-brown-stained-oak-veneer-60556925/,book/book11.png
+GERSBY ยาร์ชบี,12.0,book,https://www.ikea.com/th/th/p/gersby-bookcase-white-60360730/,book/book12.png
+IDANÄS อิดาแนส,13.0,book,https://www.ikea.com/th/th/p/idanaes-bookcase-dark-brown-stained-80487832/,book/book13.png
+BILLY บิลลี่ บานกระจก,14.0,book,https://www.ikea.com/th/th/p/billy-bookcase-with-glass-doors-green-80594926/,book/book14.png
+BILLY บิลลี่ / OXBERG อ็อกเบรย์ บานทึบครึ่งกระจก,15.0,book,https://www.ikea.com/th/th/p/billy-oxberg-bookcase-with-panel-glass-doors-white-s39528345/,book/book15.png
+BILLY บิลลี่ / HÖGADAL เฮอแกดอล บานปิด,16.0,book,https://www.ikea.com/th/th/p/billy-hoegadal-bookcase-with-doors-white-s09562307/,book/book16.png
+BILLY บิลลี่ / HÖGADAL เฮอแกดอล บานเดี่ยว,17.0,book,https://www.ikea.com/th/th/p/billy-hoegadal-bookcase-with-door-white-s09562492/,book/book17.png
+BILLY บิลลี่ พร้อมโต๊,18.0,book,https://www.ikea.com/th/th/p/billy-bookcase-with-desk-white-s09570147/,book/book18.png
+BILLY บิลลี่ / BERGSHULT แบร์สฮุลท์,19.0,book,https://www.ikea.com/th/th/p/billy-bergshult-bookcase-comb-w-foldable-table-white-s29590663/,book/book19.png
+BILLY บิลลี่ / HÖGBO เฮิกโบ,20.0,book,https://www.ikea.com/th/th/p/billy-hoegbo-bookcase-combination-w-glass-doors-white-s49545354/,book/book20.png
+LAGAN ลอกัน,2.0,refrigerator,https://www.ikea.com/th/th/p/lagan-fridge-with-3-star-compartment-freestanding-white-30508988/,refrigerator/refrigerator2.png
+TILLREDA ทิลเรียด้า,3.0,refrigerator,https://www.ikea.com/th/th/p/tillreda-fridge-freestanding-white-40497022/,refrigerator/refrigerator3.png
+ตู้เย็น SIDE BY SIDE LG GC-X257SQZW.AEPPLMT 22.4 คิว สีดำ,4.0,refrigerator,https://www.homepro.co.th/p/1246367,refrigerator/refrigerator4.png
+ตู้เย็น 2 ประตู LG GN-D382PQMB.ADSPLMT 14 คิว สีเทา อินเวอร์เตอร์,5.0,refrigerator,https://www.homepro.co.th/p/1279560,refrigerator/refrigerator5.png
+ตู้เย็น SIDE BY SIDE LG GC-B257KLJW.APYPLMT 23.4 คิว อินเวอร์เตอร์ สีเงิน,6.0,refrigerator,https://www.homepro.co.th/p/1281178,refrigerator/refrigerator6.png
+ตู้เย็น MULTI DOOR TCL RT52GCCDE 18.4 คิว กระจกน้ำเงิน,7.0,refrigerator,https://www.homepro.co.th/p/1272734,refrigerator/refrigerator7.png
+ตู้เย็น 1 ประตู WORLDTECH รุ่น WT-RF101 ขนาด 3.3 คิว ความจุ 92 ลิตร (สีดำ),8.0,refrigerator,https://www.homepro.co.th/p/888163300002,refrigerator/refrigerator8.png
+ตู้เย็น 2 ประตู SMEG FAB50RBL5 18.51 คิว สีดำ,9.0,refrigerator,https://www.homepro.co.th/p/1249779,refrigerator/refrigerator9.png
+ตู้แช่ไวน์ เดอะคูล รุ่น WINDY 105UV 25 ขวด ความจุ 3.7 คิว สีดำ,10.0,refrigerator,https://www.homepro.co.th/p/888156800002,refrigerator/refrigerator10.png
+ตู้แช่ไวน์ PRIMIO P-830UD แบ่ง 2 อุณหภูมิ 306 ขวด (สีดำ),11.0,refrigerator,https://www.homepro.co.th/p/888112800032,refrigerator/refrigerator11.png
+ตู้เย็น 2 ประตู LG GN-B389FQDM.AEPPLMT ฟรีซล่าง 11.8 คิว สีดำ,12.0,refrigerator,https://www.homepro.co.th/p/1280366,refrigerator/refrigerator12.png
+ตู้เย็น 2 ประตู LG GN-F452PQAK.AEPPLMT 16.2 คิว สีดำ,13.0,refrigerator,https://www.homepro.co.th/p/1262215,refrigerator/refrigerator13.png
+ตู้เย็น SIDE BY SIDE HITACHI R-MX600GVTH1 MGW 20.1 คิว กระจกขาว อินเวอร์เตอร์,14.0,refrigerator,https://www.homepro.co.th/p/888137400009,refrigerator/refrigerator14.png
+ตู้เย็น 2 ประตู ELECTROLUX ETM5002C-B 17.8 คิว สีดำ,15.0,refrigerator,https://www.homepro.co.th/p/1266157,refrigerator/refrigerator15.png
+ตู้เย็น MULTI DOOR HAIER HRF-FD529I(MLW)GU1 18 คิว สีขาวครีม,16.0,refrigerator,https://www.homepro.co.th/p/1299517,refrigerator/refrigerator16.png
+ตู้เย็น MULTI DOOR BOSCH KFN96APEAG 21 คิว สีสเตนเลส,17.0,refrigerator,https://www.homepro.co.th/p/1217769,refrigerator/refrigerator17.png
+ตู้เย็น 2 ประตู SAMSUNG RT62K7150BS/ST 19.9 คิว สีดำ,18.0,refrigerator,https://www.homepro.co.th/p/1300409,refrigerator/refrigerator18.png
+ตู้เย็น 1 ประตู TOSHIBA GR-D706MS 1.7 คิว สีเงิน,19.0,refrigerator,https://www.homepro.co.th/p/1189832,refrigerator/refrigerator19.png
+ตู้เย็น SIDE BY SIDE SAMSUNG RS90F65A2FST 21.7 คิว สีดำ,20.0,refrigerator,https://www.homepro.co.th/p/1289204,refrigerator/refrigerator20.png
+MATÄLSKARE มาแทลสเกเร,1.0,microwave,https://www.ikea.com/th/th/p/mataelskare-microwave-oven-ikea-300-stainless-steel-80508269/,microwave/microwave1.png
+TILLREDA ทิลเรียด้า,2.0,microwave,https://www.ikea.com/th/th/p/tillreda-microwave-oven-white-70493409/,microwave/microwave2.png
+VÄRMD แวร์มด์,3.0,microwave,https://www.ikea.com/th/th/p/vaermd-microwave-oven-ikea-300-black-20508286/,microwave/microwave3.png
+TILLREDA ทิลเรียด้า,4.0,microwave,https://www.ikea.com/th/th/p/tillreda-microwave-oven-black-50546480/,microwave/microwave4.png
+ANRÄTTA อันเรทตา,5.0,microwave,https://www.ikea.com/th/th/p/anraetta-microwave-oven-ikea-500-stainless-steel-90508264/,microwave/microwave5.png
+ไมโครเวฟ HITACHI HMRM2002 20ลิตร,6.0,microwave,https://www.homepro.co.th/p/1235935,microwave/microwave6.png
+ไมโครเวฟ ELECTROLUX EMM20K22B 20 ลิตร,7.0,microwave,https://www.homepro.co.th/p/1217659,microwave/microwave7.png
+ไมโครเวฟ ELECTROLUX EMM25D22BM 25 ลิตร,8.0,microwave,https://www.homepro.co.th/p/1218642,microwave/microwave8.png
+ไมโครเวฟ SHARP R-220EF 20 ลิตร สีแดง,9.0,microwave,https://www.homepro.co.th/p/1295178,microwave/microwave9.png
+ไมโครเวฟ XIAOMI XM_MCWOVEN 20 ลิตร สีขาว,10.0,microwave,https://www.homepro.co.th/p/1278988,microwave/microwave10.png
+ไมโครเวฟฝังดิจิตอล AXIA INT20 MWG300,11.0,microwave,https://www.homepro.co.th/p/1162241,microwave/microwave11.png
+ไมโครเวฟระบบ ดิจิตอล Midea รุ่น AM823ABV ความจุ 23 ลิตร 800 วัตต์ สีเทา,12.0,microwave,https://www.homepro.co.th/p/888137400038,microwave/microwave12.png
+ไมโครเวฟฝังดิจิตอล LUCKY FLAME BMW-30GG,13.0,microwave,https://www.homepro.co.th/p/1261080,microwave/microwave13.png
+ไมโครเวฟฝังดิจิตอล TEKA ML 8220 BIS BLACK,14.0,microwave,https://www.homepro.co.th/p/1166384,microwave/microwave14.png
+ไมโครเวฟฝังดิจิตอล HAFELE 495.06.485 สีดำ,15.0,microwave,https://www.homepro.co.th/p/1247681,microwave/microwave15.png
+ไมโครเวฟ TOSHIBA MWP-MM20P(WH) 20 ลิตร,16.0,microwave,https://www.homepro.co.th/p/1157730,microwave/microwave16.png
+"ไมโครเวฟระบบอบลมร้อน PRIMIO HSO-168 หน้าจอสัมผัส, ขนาด 18 ลิตร",17.0,microwave,https://www.homepro.co.th/p/888112800044,microwave/microwave17.png
+"ไมโครเวฟ MIDEA 17 ลิตร , 1300 W, โปรแกรม 100 เมนู",18.0,microwave,https://www.homepro.co.th/p/888112800006,microwave/microwave18.png
+ไมโครเวฟระบบอบไอน้ำ TOSHIBA ER-ND300C(R) 30 ลิตร,19.0,microwave,https://www.homepro.co.th/p/1169050,microwave/microwave19.png
+ไมโครเวฟ TOSHIBA ER-TD5000C(K) 30 ลิตร,20.0,microwave,https://www.homepro.co.th/p/1292181,microwave/microwave20.png
+SMAKSAK สม็อกซ็อก,1.0,oven,https://www.ikea.com/th/th/p/smaksak-microwave-combi-with-forced-air-stainless-steel-60508294/,oven/oven1.png
+MATÄLSKARE มาแทลสเกเร,2.0,oven,https://www.ikea.com/th/th/p/mataelskare-forced-air-oven-ikea-300-stainless-steel-20508253/,oven/oven2.png
+LAGAN ลอกัน,3.0,oven,https://www.ikea.com/th/th/p/lagan-oven-stainless-steel-30547956/,oven/oven3.png
+ANRÄTTA อันเรทตา,4.0,oven,https://www.ikea.com/th/th/p/anraetta-forced-air-oven-ikea-500-stainless-steel-70508236/,oven/oven4.png
+SMAKSAK สม็อกซ็อก,5.0,oven,https://www.ikea.com/th/th/p/smaksak-forced-air-oven-stainless-steel-90508259/,oven/oven5.png
+เตาอบฝังดิจิตอล TECNOGAS OVEN FN2K66G3X/1,6.0,oven,https://www.homepro.co.th/p/1280660,oven/oven6.png
+เตาอบ SCE Plus รุ่น ALO1 สีครีม,7.0,oven,https://www.homepro.co.th/p/888172100019,oven/oven7.png
+เตาอบ SMEG ALFA43XMF,8.0,oven,https://www.homepro.co.th/p/1216042,oven/oven8.png
+เตาอบ SCE Plus รุ่น ALO2 สีดำ,9.0,oven,https://www.homepro.co.th/p/888172100018,oven/oven9.png
+เตาอบแบบฝัง EVE รุ่น CITI ขนาด 60 ซม. สี ดำ,10.0,oven,https://www.homepro.co.th/p/888132600100,oven/oven10.png
+เตาอบฝังดิจิตอล TECNOPLUS LENORA 85 สีดำ,11.0,oven,https://www.homepro.co.th/p/1272524,oven/oven11.png
+เตาอบแบบฝัง EVE รุ่น MIRO ขนาด 60 ซม. สี ดำ,12.0,oven,https://www.homepro.co.th/p/888132600102,oven/oven12.png
+เตาอบเล็กแมนนวล NIKITO OV650 9 ลิตร,13.0,oven,https://www.homepro.co.th/p/1257870,oven/oven13.png
+เตาอบเล็กแมนนวล KITCHENER OV2000 60 ลิตร,14.0,oven,https://www.homepro.co.th/p/1254434,oven/oven14.png
+เตาอบฝังดิจิตอล TEKA STEAKMASTER BLACK GLASS,15.0,oven,https://www.homepro.co.th/p/1287471,oven/oven15.png
+เตาอบเล็กแมนนวล COMPRO CP-V60 12 ลิตร สีครีม,16.0,oven,https://www.homepro.co.th/p/1301598,oven/oven16.png
+เตาอบขนมปัง BALMUDA K11-F สีดำ,17.0,oven,https://www.homepro.co.th/p/1248743,oven/oven17.png
+ไมโครเวฟฝังดิจิตอล BOSCH BFL7221B1K,18.0,oven,https://www.homepro.co.th/p/1261453,oven/oven18.png
+เตาอบฝังดิจิตอล MEX VRM9752X,19.0,oven,https://www.homepro.co.th/p/1241486,oven/oven19.png
+เตาอบฝัง MANUAL MEX VRM9651B,20.0,oven,https://www.homepro.co.th/p/1231136,oven/oven20.png
+เครื่องปิ้งขนมปัง BRAUN HT1010BK,1.0,toaster,https://www.homepro.co.th/p/1244971,toaster/toaster1.png
+เครื่องปิ้งขนมปัง OTTO TT-135A,2.0,toaster,https://www.homepro.co.th/p/1276795,toaster/toaster2.png
+เครื่องปิ้งขนมปัง SMARTHOME SM-T700,3.0,toaster,https://www.homepro.co.th/p/1281800,toaster/toaster3.png
+เครื่องปิ้งขนมปัง TEFAL TT3670 2ชิ้น,4.0,toaster,https://www.homepro.co.th/p/1004831,toaster/toaster4.png
+เครื่องปิ้งขนมปัง MINIMEX MT1-BL สีดำ,5.0,toaster,https://www.homepro.co.th/p/1278929,toaster/toaster5.png
+เครื่องปิ้งขนมปัง AIKO AK-808 สีชมพู,6.0,toaster,https://www.homepro.co.th/p/1157687,toaster/toaster6.png
+เครื่องปิ้งขนมปัง SMEG TSF01SSEU สีเงิน,7.0,toaster,https://www.homepro.co.th/p/1275846,toaster/toaster7.png
+เครื่องปิ้งขนมปัง ELECTROLUX E5TS1-50ST,8.0,toaster,https://www.homepro.co.th/p/1222338,toaster/toaster8.png
+เครื่องปิ้งขนมปัง DELONGHI CTOV2103 สีเขียว,9.0,toaster,https://www.homepro.co.th/p/1194542,toaster/toaster9.png
+เครื่องอบแซนด์วิชขนาดใหญ่ HOMEMATE (HOM-12I183) สีดำ,10.0,toaster,https://www.homepro.co.th/p/888112900012,toaster/toaster10.png
+เครื่องอบวาฟเฟิลกลมใหญ่ HOMEMATE (HOM-TSK2105B) สีเงิน,11.0,toaster,https://www.homepro.co.th/p/888112900014,toaster/toaster11.png
+เครื่องทำแซนด์วิช LOCKNLOCK EJB126IVY สีครีม,12.0,toaster,https://www.homepro.co.th/p/1251055,toaster/toaster12.png
+เครื่องปิ้งขนมปัง JENNIFEROOM JRTH-T900WH สีขาว,13.0,toaster,https://www.homepro.co.th/p/1290626,toaster/toaster13.png
+เครื่องปิ้งขนมปัง IMARFLEX IF-374 4 ชิ้น,14.0,toaster,https://www.homepro.co.th/p/1276572,toaster/toaster14.png
+เครื่องปิ้งขนมปังแผ่นยาว 1 ช่อง HOMEMATE (HOM-231031) สีเงิน,15.0,toaster,https://www.homepro.co.th/p/888112900010,toaster/toaster15.png
+เครื่องปิ้งขนมปัง Magimix MA2306-RE Vision 11540 สีแดง,16.0,toaster,https://www.homepro.co.th/p/888132300020,toaster/toaster16.png
+เครื่องปิ้งขนมปัง SCE Plus รุ่น TT1 สีขาว,17.0,toaster,https://www.homepro.co.th/p/888172100036,toaster/toaster17.png
+เครื่องปิ้งขนมปัง ELECTROLUX E2TS1-100W,18.0,toaster,https://www.homepro.co.th/p/1175592,toaster/toaster18.png
+เครื่องอบวาฟเฟิลฮ่องกง HOMEMATE (HOM-119212) สีขาว,19.0,toaster,https://www.homepro.co.th/p/888112900016,toaster/toaster19.png
+เครื่องปิ้งขนมปัง SMEG TSF01PBEU 2 ชิ้น สีฟ้า,20.0,toaster,https://www.homepro.co.th/p/1182202,toaster/toaster20.png
+HAVSEN ฮาฟเซน ซิงก์ฝัง 2 หลุม เปิดด้านหน้า,1.0,sink,https://www.ikea.com/th/th/p/havsen-sink-bowl-2-bowls-w-visible-front-white-s39250267/,sink/sink1.png
+HAVSEN ฮาฟเซนซิงก์ฝังหลุมเดี่ยว,2.0,sink,https://www.ikea.com/th/th/p/havsen-inset-sink-1-bowl-white-s89253715/,sink/sink2.png
+"VATTUDALEN วัตทูดาเลน ซิงก์ฝังหลุมเดี่ยว+ที่คว่ำจาน, สเตนเลส",3.0,sink,https://www.ikea.com/th/th/p/vattudalen-inset-sink-1-bowl-with-drainboard-stainless-steel-s49158169/,sink/sink3.png
+"FYNDIG ฟืนดิก ซิงก์ฝังหลุมเดี่ยว, สเตนเลส",4.0,sink,https://www.ikea.com/th/th/p/fyndig-inset-sink-1-bowl-stainless-steel-s39158004/,sink/sink4.png
+"VRESJÖN เวเรเชิน ซิงก์ฝังหลุมเดี่ยว, สเตนเลส",5.0,sink,https://www.ikea.com/th/th/p/vresjoen-inset-sink-1-bowl-stainless-steel-s09425730/,sink/sink5.png
+"HILLESJÖN ฮิลเลเควิน ซิงก์ฝัง 1 1/2 หลุม, สเตนเลส",6.0,sink,https://www.ikea.com/th/th/p/hillesjoen-inset-sink-1-1-2-bowl-stainless-steel-s19140703/,sink/sink6.png
+"LÅNGUDDEN ล็องอุดเดน ซิงก์ฝังหลุมเดี่ยว, สเตนเลส",7.0,sink,https://www.ikea.com/th/th/p/langudden-inset-sink-1-bowl-stainless-steel-s49157481/,sink/sink7.png
+"KILSVIKEN ชีลส์วีคเกน ซิงก์ฝังหลุมเดี่ยว+ที่พักจาน, ขาว หินควอทซ์คอมโพสิท",8.0,sink,https://www.ikea.com/th/th/p/kilsviken-inset-sink-1-bowl-with-drainboard-white-quartz-composite-s89598977/,sink/sink8.png
+"HILLESJÖN ฮิลเลเควิน ซิงก์ฝังหลุมเดี่ยว, สเตนเลส",9.0,sink,https://www.ikea.com/th/th/p/hillesjoen-inset-sink-1-bowl-stainless-steel-s59401741/,sink/sink9.png
+"VIMMERN วิมเมียร์น ก๊อกผสมครัว/หัวฉีด, สีสเตนเลส",10.0,sink,https://www.ikea.com/th/th/p/vimmern-kitchen-mixer-tap-handspray-stainless-steel-colour-70519942/,sink/sink10.png
+"DELSJÖN เดลเชิน ก๊อกผสมครัว, สีเหล็กปัดดำ",11.0,sink,https://www.ikea.com/th/th/p/delsjoen-kitchen-mixer-tap-brushed-black-metal-20488797/,sink/sink11.png
+"GAMLESJÖN แกมเลเควิน ก๊อกผสมครัวแบบ dual-control, สีเหล็กปัดดำ",12.0,sink,https://www.ikea.com/th/th/p/gamlesjoen-dual-control-kitchen-mixer-tap-brushed-black-metal-00341674/,sink/sink12.png
+"GRILLSKÄR กริลล์แชร์ ซิงก์พร้อมโต๊ะข้าง, สเตนเลส/นอกอาคาร",13.0,sink,https://www.ikea.com/th/th/p/grillskaer-sink-unit-w-side-table-stainless-steel-outdoor-s09504652/,sink/sink13.png
+"LAGAN ลอกัน ก๊อกผสมครัวแบบก้านเดี่ยว, ชุบโครเมียม",14.0,sink,https://www.ikea.com/th/th/p/lagan-single-lever-kitchen-mixer-tap-chrome-plated-00173760/,sink/sink14.png
+"NÅLBLECKA นัวล์เบลคคา ที่จัดเก็บสำหรับเคาน์เตอร์ท็อปครัว, โลหะ/ไม้ไผ่",15.0,sink,https://www.ikea.com/th/th/p/nalblecka-kitchen-countertop-organiser-metal-bamboo-90564617/,sink/sink15.png
+"BUTORP บูตอร์ป กล่อง/ตู้เก็บของ, ดำ",16.0,sink,http://ikea.com/th/th/p/butorp-storage-unit-black-50425379/,sink/sink16.png
+RINNIG รินนิก ที่วางจาน,17.0,sink,https://www.ikea.com/th/th/p/rinnig-plate-holder-40387269/,sink/sink17.png
+"TORNVIKEN ทูร์นวีคเกน ชั้นวางจาน, เทา",18.0,sink,https://www.ikea.com/th/th/p/tornviken-plate-shelf-grey-90402248/,sink/sink18.png
+"ORDNING อวร์ดนิ่ง ที่คว่ำจาน, สเตนเลส",19.0,sink,https://www.ikea.com/th/th/p/ordning-dish-drainer-stainless-steel-00179535/,sink/sink19.png
+"RINNIG รินนิก ถุงมือทำความสะอาด, เหลืองสด/ออฟไวท์",20.0,sink,https://www.ikea.com/th/th/p/rinnig-cleaning-gloves-bright-yellow-off-white-90565853/,sink/sink20.png
+"STORAVAN สตูรอวาน อุปกรณ์ห้องน้ำ3ชิ้น, ขาว",1.0,toilet,https://www.ikea.com/th/th/p/storavan-3-piece-bathroom-set-white-50429004/,toilet/toilet1.png
+"BROGRUND บรูกรุนด์ ชั้นแขวนเข้ามุม, สเตนเลส",2.0,toilet,https://www.ikea.com/th/th/p/brogrund-corner-wall-shelf-unit-stainless-steel-60408987/,toilet/toilet2.png
+"BJÄRSEN เบยร์เชน ผ้าม่านห้องน้ำ, ขาว",3.0,toilet,https://www.ikea.com/th/th/p/bjaersen-shower-curtain-white-40443703/,toilet/toilet3.png
+"HAVBÄCK ฮาฟเบ็ค / ORRSJÖN ออร์เควิน ตู้มีลิ้นชัก/อ่างล้างหน้า/ก๊อก, เบจ",4.0,toilet,https://www.ikea.com/th/th/p/havbaeck-orrsjoen-wash-stnd-w-drawers-wash-basin-tap-beige-s59516011/,toilet/toilet4.png
+ÄNGSJÖN อิงเควิน / BACKSJÖN บัคเควิน ตู้ล้างหน้า/อ่างล้างหน้า/ก๊อก,5.0,toilet,https://www.ikea.com/th/th/p/aengsjoen-backsjoen-wash-stand-wash-basin-tap-oak-effect-grey-stone-effect-s89543447/,toilet/toilet5.png
+ÄNGSJÖN อิงเควิน / BACKSJÖN บัคเควิน ตู้มีลิ้นชัก/อ่างล้างหน้า/ก๊อก,6.0,toilet,https://www.ikea.com/th/th/p/aengsjoen-backsjoen-wash-stnd-w-drawers-wash-basin-taps-oak-effect-s89566797/,toilet/toilet6.png
+"ENHET เอียนเฮต ตู้กระจกบานเดี่ยว, ขาว",7.0,toilet,https://www.ikea.com/th/th/p/enhet-mirror-cabinet-with-1-door-white-s29396562/,toilet/toilet7.png
+"ENHET เอียนเฮต / TVÄLLEN ทวาลเลน  ที่ตั้งอ่างล้างหน้าแบบเปิด 2 ชั้น, แอนทราไซต์",8.0,toilet,https://www.ikea.com/th/th/p/enhet-tvaellen-open-wash-stand-with-2-shelves-anthracite-s69554658/,toilet/toilet8.png
+"HEMNES เฮมเนส ตู้กระจกบานคู่, ขาว",9.0,toilet,https://www.ikea.com/th/th/p/hemnes-mirror-cabinet-with-2-doors-white-60217681/,toilet/toilet9.png
+"HEMNES เฮมเนส ชั้นวางของ, ขาว",10.0,toilet,https://www.ikea.com/th/th/p/hemnes-shelving-unit-white-80217656/,toilet/toilet10.png
+"TÄNNFORSEN แทนฟอร์เซน / TÖRNVIKEN ทอร์นวีเคน ตู้มีลิ้นชัก/อ่างล้างหน้า/ก๊อก, ขาว/ดำ ลายหินอ่อน",11.0,toilet,https://www.ikea.com/th/th/p/taennforsen-toernviken-wash-stnd-w-drawers-wash-basin-tap-white-black-marble-effect-s79523360/,toilet/toilet11.png
+"HAVBÄCK ฮาฟเบ็ค / ORRSJÖN ออร์เควิน ตู้ล้างหน้า/อ่างล้างหน้า/ก๊อก, เทาเข้ม/ไม้ไผ่",12.0,toilet,https://www.ikea.com/th/th/p/havbaeck-orrsjoen-wash-stand-wash-basin-tap-dark-grey-bamboo-s99543381/,toilet/toilet12.png
+"ENHET เอียนเฮต ชุดตู้เก็บของ, ขาว",13.0,toilet,https://www.ikea.com/th/th/p/enhet-storage-combination-white-s39480447/,toilet/toilet13.png
+สุขภัณฑ์ 1 ชิ้น MOYA 309 3/4.5 ลิตร สีขาว,14.0,toilet,https://www.homepro.co.th/p/1250757,toilet/toilet14.png
+สุขภัณฑ์ 2 ชิ้น HAFELE 495.61.457 3/4.8L สีขาว,15.0,toilet,https://www.homepro.co.th/p/1158975,toilet/toilet15.png
+ÄNGSJÖN อิงเควิน / BACKSJÖN บัคเควิน ตู้ล้างหน้า/อ่างล้างหน้า/ก๊อก,16.0,toilet,http://ikea.com/th/th/p/aengsjoen-backsjoen-wash-stand-wash-basins-taps-oak-effect-white-marble-effect-s79543495/,toilet/toilet16.png
+"VALLAMOSSE วัลลามอสเซ ราวปรับระดับ+ชุดฝักบัวมือ, ชุบโครเมียม",17.0,toilet,https://www.ikea.com/th/th/p/vallamosse-riser-rail-with-handshower-kit-chrome-plated-90349661/,toilet/toilet17.png
+"BROGRUND บรูกรุนด์ ชุดฝักบัวมือ/ติดผนัง+ไดเวอร์เตอร์, ชุบโครเมียม",18.0,toilet,https://www.ikea.com/th/th/p/brogrund-head-handshower-kit-with-diverter-chrome-plated-70342547/,toilet/toilet18.png
+อ่างอาบน้ำ CRISTINA CT-EX-A175075 175 ซม. สีขาว,19.0,toilet,https://www.homepro.co.th/p/1001181,toilet/toilet19.png
+อ่างน้ำวนอัดอากาศ I-SPA BD-EMO002WAF 180 ซม. สีขาว,20.0,toilet,https://www.homepro.co.th/p/1015471,toilet/toilet20.png

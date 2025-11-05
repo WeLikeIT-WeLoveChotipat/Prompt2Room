@@ -12,7 +12,8 @@ def gate(text: str, API_KEY: str) -> ResponseStructor:
         config={
             "system_instruction": SYSTEM_INSTRUCTION,        # ใช้ system instruction
             "response_mime_type": "application/json",        # บังคับให้ตอบเป็น JSON
-            "response_schema": ResponseStructor                 # สคีมาด้วย Pydantic
+            "response_schema": ResponseStructor,                 # สคีมาด้วย Pydantic
+            "temperature": 0.2
         },
     )
     return ResponseStructor.model_validate_json(resp.text)

@@ -20,18 +20,16 @@ npm run dev
 ## 3. การติดตั้ง Backend
 run terminal อีกตัว
 ```bash
-cd backend
-
 # ติดตั้งรอบเดียว
 python -m venv env
 
-source env/bin/activate   # สำหรับ macOS/Linux
-env\Scripts\activate      # สำหรับ Windows
+source venv/bin/activate   # สำหรับ macOS/Linux
+venv\Scripts\activate      # สำหรับ Windows
 
 pip install -r requirements.txt
 
 #  รันเซิร์ฟเวอร์
-uvicorn main:app --reload
+uvicorn backend.main:app --reload
 ```
 
 ### RUN WEB
@@ -39,10 +37,10 @@ uvicorn main:app --reload
 cd frontend
 npm run dev
 
-cd backend
-source env/bin/activate   # สำหรับ macOS/Linux
-env\Scripts\activate      # สำหรับ Windows
-uvicorn main:app --reload
+cd ..
+source venv/bin/activate   # สำหรับ macOS/Linux
+venv\Scripts\activate      # สำหรับ Windows
+uvicorn backend.main:app --reload
 ```
 
 นายจิรภัทร  วิชัยดิษฐ์     	รหัสนักศึกษา 68070014

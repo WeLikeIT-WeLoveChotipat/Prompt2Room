@@ -6,7 +6,7 @@ env/
 *.ipynb
 .ipynb_checkpoints/
 *.pt
-.env.*
+.env.local
 *.json
 *.ipynb
 .env

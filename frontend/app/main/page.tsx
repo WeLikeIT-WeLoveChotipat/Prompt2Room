@@ -178,7 +178,7 @@ export default function MainPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100 font-kanit">
+    <main className="min-h-screen font-kanit">
       <Navigation apiStatus={apiStatus} apiMessage={apiMessage} />
 
       {image ? (

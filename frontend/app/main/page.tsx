@@ -68,10 +68,10 @@ export default function MainPage() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      if (!user) {
-        router.replace("/login");
-        return;
-      }
+      // if (!user) {
+      //   router.replace("/login");
+      //   return;
+      // }
 
       setUserId(user.id);
       await refreshPrompts(user.id);

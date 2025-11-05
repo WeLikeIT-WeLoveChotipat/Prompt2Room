@@ -38,10 +38,10 @@ export default function Myteam() {
                 />
               </div>
 
-              <h3 className="text-gray-700 text-xl font-medium mb-2 group-hover:text-orange-500 transition-colors">
+              <h3 className="text-gray-700 text-xl font-medium group-hover:text-orange-500 transition-colors">
                 {member.name}
               </h3>
-              {/* <p className="text-gray-500">{member.id}</p> */}
+              <p className="text-gray-500">{member.id}</p>
             </div>
           ))}
         </div>

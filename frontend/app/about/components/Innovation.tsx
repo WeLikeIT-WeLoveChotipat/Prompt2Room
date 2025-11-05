@@ -47,7 +47,7 @@ export default function Innovation() {
             className="group bg-white rounded-2xl shadow-md border border-transparent hover:border-orange-300 hover:shadow-xl transition-all duration-500 p-8 flex flex-col items-center text-center"
           >
             <div className="p-8 text-center space-y-5">
-              <div className={"w-20 h-30 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500 bg-[#FFF4ED]"}>
+              <div className={"w-30 h-30 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-10 transition-all duration-500 bg-[#FFF4ED]"}>
                 <Image
                   src={feature.icon}
                   alt={feature.title}

@@ -4,7 +4,7 @@ export type PromptRow = {
   id: number
   user_id: string
   prompt: string
-  image_url: string | null 
+  image_url: string | null
   created_at: string
 }
 

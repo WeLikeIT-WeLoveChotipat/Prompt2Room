@@ -2,23 +2,11 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from .filter.gate_service import gate # ฟังก์ชันหลักกรองและประมวลผลข้อความ
-from .filter.client import get_openai_api_key, get_model_name # ฟังก์ชันดึงค่า OpenAI API Key
+from .filter.client import get_openai_api_key, get_model_name, get_supabase_url, get_supabase_key # ฟังก์ชันดึงค่า OpenAI API Key
 from .generate.pipeline import pipeline # ฟังก์ชันหลักกรองและประมวลผลข้อความ
 from supabase import create_client, Client
-from dotenv import load_dotenv
-
 import os
 import json
-
-load_dotenv()
-
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
-
-if not SUPABASE_URL or not SERVICE_KEY:
-    raise ValueError("Missing SUPABASE_URL or SUPABASE_SERVICE_KEY in .env")
-
-supabase: Client = create_client(SUPABASE_URL, SERVICE_KEY)
 
 app = FastAPI()
 
@@ -36,6 +24,13 @@ app.add_middleware(
 
 API = get_openai_api_key()
 MODEL= get_model_name()
+SUPABASE_URL = get_supabase_url()
+SERVICE_KEY = get_supabase_key()
+
+if not SUPABASE_URL or not SERVICE_KEY:
+    raise ValueError("Missing SUPABASE_URL or SUPABASE_SERVICE_KEY in .env")
+
+supabase: Client = create_client(SUPABASE_URL, SERVICE_KEY)
 
 @app.get("/")
 async def root():

@@ -36,6 +36,8 @@
 ### หน้า About
 ![About Page](./about.png)
 
+![Prompt2Room PSCP](./Prompt2Room%20PSCP.png)
+
 ---
 
 ## ⚙️ การติดตั้งและใช้งาน
